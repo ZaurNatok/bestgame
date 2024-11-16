@@ -454,7 +454,11 @@ body {
     }
 
     .item__image {
-        width: 165px;
+        width: 45vw;
+    }
+
+    .item__link {
+        width: 44vw;
     }
     
     .item__image_div {
@@ -498,6 +502,7 @@ body {
 
     .filter-container__filter {
         overflow-x: scroll;
+        overflow-y: clip;
     }
 
     .filter-container__link {
