@@ -230,6 +230,8 @@ body {
     overflow: hidden;
     border-radius: 40px;
     margin: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .item__image {
