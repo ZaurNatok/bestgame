@@ -11,6 +11,9 @@ let gamesButtonTitle = document.querySelector('.item__filter-title_games');
 let programmsButtonTitle = document.querySelector('.item__filter-title_programms');
 let mainContainer = document.querySelector('.items_main');
 
+let search = document.querySelector('.top-line__search');
+let searchResultDiv = document.querySelector('.searchResult');
+
 // FAQ
 
 document.addEventListener('click', function (e) {
@@ -19,6 +22,64 @@ document.addEventListener('click', function (e) {
         e.target.parentNode.querySelector('.question__arrow').classList.toggle('rotate');
     }
 })
+
+// Поиск
+
+search.addEventListener('input', function() {
+    let searchResultArr = [];
+    services.forEach(el => {
+        if(el.title.toLowerCase().includes(search.value.toLowerCase())) {
+
+            searchResultArr.push(el.title);
+        } else {
+            searchResultDiv.classList.remove('visible');
+        }  
+    })
+    searchService(searchResultArr);
+})
+
+// Мобильный поиск
+
+
+
+// Общая функция поиска
+
+function searchService(el) {
+    searchResultDiv.textContent = ''
+    searchResultDiv.classList.add('visible');
+
+el.forEach(element => {
+
+    services.forEach(elt => {
+        if(elt.title == element) {
+
+            let title = elt.title;
+            let imgLink = elt.imageLink;
+            
+            const itemLink = document.createElement('a');
+            const itemImage = document.createElement('img');
+            const itemTitle = document.createElement('h3');
+
+            itemLink.classList.add('searchResult__item');
+            itemImage.classList.add('searchResult__icon');
+            itemImage.setAttribute('src', `${imgLink}`)
+            itemTitle.classList.add('searchResult__title');
+            itemLink.setAttribute('href', `service.html`)
+
+            searchResultDiv.appendChild(itemLink);
+            itemLink.appendChild(itemImage);
+            itemLink.appendChild(itemTitle);
+
+
+            itemTitle.textContent = title;
+        }
+    })
+})
+
+
+
+    
+}
 
 // Переключение типов сервисов
 
