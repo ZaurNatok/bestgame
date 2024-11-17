@@ -186,6 +186,7 @@ body {
     display: flex;
 }
 
+
 .filter__item {
     display: flex;
     height: 40px;
@@ -526,6 +527,7 @@ body {
     
     .filter__item {
         margin-right: 5px;
+        padding: 0 10px;
     }
 
     .filter-container {
@@ -537,11 +539,16 @@ body {
         flex-direction: column;
     }
 
+    .filter-container__link {
+        display: none;
+    }
+
     .items_main {
         display: grid;
         grid-template-columns: auto auto;
         width: calc(100% - 30px);
         margin: auto;
+        column-gap: 10px;
     }
 
     .faq {
@@ -558,6 +565,7 @@ body {
     .filter-container__filter {
         overflow-x: scroll;
         overflow-y: clip;
+        width: 104%;
     }
 
     .filter-container__link {
