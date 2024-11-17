@@ -460,15 +460,21 @@ body {
         display: none;
     }
 
+    .search-area {
+        width: 100%;
+    }
+
     .top-line__search {
-        max-width: calc(100% - 50px);
+        max-width: calc(100% - 20px);
         margin: auto;
     }
 
     .searchResult {
         width: calc(100% - 60px);
-        height: 200px;
+        height: fit-content;
+        max-height: 200px;
         overflow: scroll;
+        color: #fff;
     }
 
     .searchIcon {

@@ -25,17 +25,23 @@ document.addEventListener('click', function (e) {
 
 // Поиск
 
+
+
 search.addEventListener('input', function() {
     let searchResultArr = [];
+
     services.forEach(el => {
         if(el.title.toLowerCase().includes(search.value.toLowerCase())) {
-
             searchResultArr.push(el.title);
         } else {
             searchResultDiv.classList.remove('visible');
+            searchResultDiv.textContent = '';
         }  
     })
     searchService(searchResultArr);
+    if(searchResultArr.length == 0) {
+        searchResultDiv.textContent = 'Ничего не найдено';
+    }
 })
 
 // Мобильный поиск
@@ -45,6 +51,7 @@ search.addEventListener('input', function() {
 // Общая функция поиска
 
 function searchService(el) {
+
     searchResultDiv.textContent = ''
     searchResultDiv.classList.add('visible');
 
@@ -70,13 +77,15 @@ el.forEach(element => {
             itemLink.appendChild(itemImage);
             itemLink.appendChild(itemTitle);
 
-
             itemTitle.textContent = title;
         }
     })
 })
 
-
+if(search.value == '') {
+    searchResultDiv.textContent = '';
+    searchResultDiv.classList.remove('visible');
+}
 
     
 }
