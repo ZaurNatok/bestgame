@@ -7,184 +7,163 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Unbounded:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://kit.fontawesome.com/533bd3dbce.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./pages/index.css">
+    <link rel="stylesheet" href="./vendor/normalize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="https://kit.fontawesome.com/533bd3dbce.js" crossorigin="anonymous"></script>
         
     <title>BestGame</title>
 </head>
 <body>
-    <main class="container">
 
-        <div class="top-line">
-            <img src="./img/vtb.png" alt="logo" class="logo">
-            <ul class="top-line__menu">
-                <li class="menu__item"><a href="#" class="item__link">Главная</a></li>
-                <li class="menu__item"><a href="#" class="item__link">Все сервисы</a></li>
-                <li class="menu__item"><a href="#" class="item__link">Вопрос / ответ</a></li>
-            </ul>
-            <div class="search-area">
-                <input type="text" class="top-line__search" placeholder="Поиск">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <div class="searchResult">
-                    <!-- <a href="#" class="searchResult__item">
-                        <img src="./img/steam.png" alt="" class="searchResult__icon">
-                        <h3 class="searchResult__title">Steam</h3>
-                    </a> -->
-                </div>
-            </div>
+<!-- header -->
 
+    <section class="topline">
+        <img src="./img/vtb.png" alt="logo" class="logo logo_topline">
+        <ul class="topline__menu">
+            <li class="menu-item"><a href="#" class="link">Главная</a></li>
+            <li class="menu-item"><a href="#" class="link">Все сервисы</a></li>
+            <li class="menu-item"><a href="#" class="link">Вопрос / ответ</a></li>
+        </ul>
+        <div class="topline__search-area">
+            <input type="text" class="topline__search" placeholder="Поиск">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="topline__searchResult"></div>
         </div>
+    </section>
 
-        <div class="top-line_mobile">
-            <img src="./img/logo.png" alt="logo" class="logo">
-            <div class="menu-icon"></div>
-            <div class="search-area">
-                <input type="text" class="top-line__search top-line__search_mobile" placeholder="Поиск">
-                <div class="searchResultMobile">
-                    <!-- <a href="#" class="searchResult__item">
-                        <img src="./img/steam.png" alt="" class="searchResult__icon">
-                        <h3 class="searchResult__title">Steam</h3>
-                    </a> -->
-                </div>
-            </div>
+<!-- banner -->
 
+    <section class="banner swiper">
+        <div class="banner__wrapper swiper-wrapper">
+            <!-- Slides -->
+            <img src="./img/banner1.jpg" class="swiper-slide banner__item" alt="banner">
+            <img src="./img/banner2.jpg" class="swiper-slide banner__item" alt="banner">
         </div>
+          <!-- Pagination  -->
+        <div class="banner__pagination swiper-pagination"></div>
+          <!-- Navigation buttons -->
+        <div class="banner__prev swiper-button-prev"></div>
+        <div class="banner__next swiper-button-next"></div>
 
-        <div class="banner swiper">
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <img src="./img/banner1.jpg" class="swiper-slide banner__item" alt="banner">
-                <img src="./img/banner2.jpg" class="swiper-slide banner__item" alt="banner">
-            </div>
-              <!-- Pagination  -->
-            <div class="swiper-pagination"></div>
-              <!-- Navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+        <!-- Button scrollbar -->
+        <div class="banner__scrollbar swiper-scrollbar"></div>
+    </section>
 
-            <!-- Button scrollbar -->
-            <div class="swiper-scrollbar"></div>
+<!-- popular items -->
+
+    <section class="popular">
+        <h2 class="popular__title">Популярное</h2>
+        <div class="popular__arrows">
+            <div class="popular__arrow popular__arrow_previous"><i class="arrows fas fa-chevron-left arrows_left"></i></div>
+            <div class="popular__arrow popular__arrow_next"><i class="arrows fas fa-chevron-right arrows_right"></i></div>
         </div>
+    </section>
 
-        <div class="popular">
-            <h2 class="popular__title">Популярное</h2>
-            <div class="popular__arrows">
-                <div class="arrows__arrow arrows__arrow_previous"><i class="fas fa-chevron-left arrows_left"></i></div>
-                <div class="arrows__arrow arrows__arrow_next"><i class="fas fa-chevron-right arrows_right"></i></div>
+    <div class="items items_popular swiper-popular">
+        <div class="items__wrapper swiper-wrapper swiper-wrapper_popular"></div>
+    </div>
+
+<!-- items filter -->
+
+    <section class="filter">
+        <div class="filter__wrapper">
+            <div class="filter__item filter__item_games filter__item_active">
+                <i class="fas fa-solid fa-gamepad icon"></i>
+                <h3 class="filter__title filter__title_games filter__title_active">Пополнение Игр</h3>
             </div>
-        </div>
-
-
-        <div class="items items_popular swiper-popular">
-            <div class="swiper-wrapper swiper-wrapper_popular"></div>
-        </div>
-
-        <div class="filter-container">
-            <div class="filter-container__filter">
-                <div class="filter__item filter__item_games filter__item_active">
-                    <i class="fas fa-solid fa-gamepad item__icon"></i>
-                    <h3 class="item__filter-title item__filter-title_games item__filter-title_active">Пополнение Игр</h3>
-                </div>
-                <div class="filter__item filter__item_services">
-                    <img src="./img/serv.png" alt="services" class="item__icon">
-                    <h3 class="item__filter-title item__filter-title_services">Сервисы</h3>
-                </div>
-                <div class="filter__item filter__item_programms">
-                    <img src="./img/soft.png" alt="software" class="item__icon">
-                    <h3 class="item__filter-title item__filter-title_programms">Программы</h3>
-                </div>
+            <div class="filter__item filter__item_services">
+                <img src="./img/serv.png" alt="services" class="icon">
+                <h3 class="filter__title filter__title_services">Сервисы</h3>
             </div>
-            
-            <div class="filter-container__link">
-                <a href="#" class="filter-container__all">Все сервисы</a>
-                <img src="./img/gobutton.png" alt="" class="filter-conteiner__all-image">
+            <div class="filter__item filter__item_programms">
+                <img src="./img/soft.png" alt="software" class="icon">
+                <h3 class="filter__title filter__title_programms">Программы</h3>
             </div>
         </div>
+    </section>
 
-        <div class="items items_main">
+<!-- items container -->    
 
-            
+    <div class="items items_main"></div>
+
+<!-- FAQ -->     
+
+    <section class="faq">
+        <div class="faq__left">
+            <h2 class="faq__title">Частые вопросы</h2>
         </div>
 
-        <div class="faq">
-            <div class="faq__left">
-                <h2 class="left__title">Частые вопросы</h2>
-                <div class="filter-container__link">
-                    <a href="#" class="left__link">Все вопросы и ответы</a>
-                    <img src="./img/gobutton_w.png" alt="" class="filter-conteiner__all-image">
-                </div>
-            </div>
-            <div class="faq__right">
-                <div class="right__question">
-                    <div class="question__item">
-                        <div class="item__tite-icon">
-                            <h3 class="question__title">Как отправить деньги</h3>
-                            <img src="img/back.png" class="question__arrow">
-                        </div>
-                        <p class="question__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+        <div class="faq__right">
+            <div class="faq__questions">
+                <div class="faq__item">
+                    <div class="title-icon">
+                        <h3 class="question-title">Как отправить деньги</h3>
+                        <img src="img/back.png" class="faq__arrow">
                     </div>
-
-                    <div class="question__item">
-                        <div class="item__tite-icon">
-                            <h3 class="question__title">Какая комиссия за перевод</h3>
-                            <img src="img/back.png" class="question__arrow">
-                        </div>
-                        <p class="question__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
-                    </div>
-
-                    <div class="question__item">
-                        <div class="item__tite-icon">
-                            <h3 class="question__title">Как быстро дойдут деньги</h3>
-                            <img src="img/back.png" class="question__arrow">
-                        </div>
-                        <p class="question__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
-                    </div>
-
-                    <div class="question__item">
-                        <div class="item__tite-icon">
-                            <h3 class="question__title">В какой валюте можно отправлять деньги?</h3>
-                            <img src="img/back.png" class="question__arrow">
-                        </div>
-                        <p class="question__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
-                    </div>
-
-                    <div class="question__item">
-                        <div class="item__tite-icon">
-                            <h3 class="question__title">Какой курс будет при конвертации?</h3>
-                            <img src="img/back.png" class="question__arrow">
-                        </div>
-                        <p class="question__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
-                    </div>
-
+                    <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
                 </div>
+
+                <div class="faq__item">
+                    <div class="title-icon">
+                        <h3 class="question-title">Какая комиссия за перевод</h3>
+                        <img src="img/back.png" class="faq__arrow">
+                    </div>
+                    <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+                </div>
+
+                <div class="faq__item">
+                    <div class="title-icon">
+                        <h3 class="question-title">Как быстро дойдут деньги</h3>
+                        <img src="img/back.png" class="faq__arrow">
+                    </div>
+                    <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+                </div>
+
+                <div class="faq__item">
+                    <div class="title-icon">
+                        <h3 class="question-title">В какой валюте можно отправлять деньги?</h3>
+                        <img src="img/back.png" class="faq__arrow">
+                    </div>
+                    <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+                </div>
+
+                <div class="faq__item">
+                    <div class="title-icon">
+                        <h3 class="question-title">Какой курс будет при конвертации?</h3>
+                        <img src="img/back.png" class="faq__arrow">
+                    </div>
+                    <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+                </div>
+
             </div>
         </div>
-    </main>
+    </section>
+
+<!-- Footer -->
 
     <footer class="footer">
         <div class="footer__left">
             <img src="./img/vtb.png" alt="logo" class="logo">
-            <p class="left__copyright">© 2024 Best Game</p>
+            <p class="footer__copyright">© 2024 Best Game</p>
         </div>
         <div class="footer__center">
             <ul class="footer__menu">
-                <li class="menu__item"><a href="#" class="item__link">Главная</a></li>
-                <li class="menu__item"><a href="#" class="item__link">Все сервисы</a></li>
-                <li class="menu__item"><a href="#" class="item__link">Вопрос / ответ</a></li>
+                <li class="menu-item"><a href="#" class="link">Главная</a></li>
+                <li class="menu-item"><a href="#" class="link">Все сервисы</a></li>
+                <li class="menu-item"><a href="#" class="link">Вопрос / ответ</a></li>
             </ul>
         </div>
         <div class="footer__right">
-            <div class="right__support">
-                <h3 class="support__title">Поддержка</h3>
-                <a href="#" class="support__link">support@bestgame.com</a>
+            <div class="footer__support">
+                <h3 class="footer__title">Поддержка</h3>
+                <a href="#" class="footer__link">support@bestgame.com</a>
             </div>
-            <a href="#" class="support__link">Пользовательское соглашение</a>
+            <a href="#" class="footer__link">Пользовательское соглашение</a>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
 
@@ -205,8 +184,6 @@ const swiper = new Swiper('.swiper', {
   },
 
 });
-
-
 </script>
 
 <script>
@@ -231,12 +208,12 @@ const swiper = new Swiper('.swiper', {
     });
 
         //next slide
-document.querySelector('.arrows__arrow_next').addEventListener('click', function(){
+document.querySelector('.popular__arrow_next').addEventListener('click', function(){
     swiper2.slideNext();
 })
 
 //previous slide
-document.querySelector('.arrows__arrow_previous').addEventListener('click', function(){
+document.querySelector('.popular__arrow_previous').addEventListener('click', function(){
    swiper2.slidePrev();
 })
 </script>

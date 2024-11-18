@@ -1,31 +1,29 @@
-let questionTitle = document.querySelectorAll('.question__title');
-let questionButton = document.querySelector('question__arrow');
+let questionTitle = document.querySelectorAll('.question-title');
+let questionButton = document.querySelector('faq__arrow');
 let gamesButton = document.querySelector('.filter__item_games');
 let servicesButton = document.querySelector('.filter__item_services');
 let programmsButton = document.querySelector('.filter__item_programms');
-let gamesFilter = document.querySelector('.item__filter-title_games');
-let servicesFilter = document.querySelector('.item__filter-title_services');
-let programmsFilter = document.querySelector('.item__filter-title_programms');
-let servicesButtonTitle = document.querySelector('.item__filter-title_services');
-let gamesButtonTitle = document.querySelector('.item__filter-title_games');
-let programmsButtonTitle = document.querySelector('.item__filter-title_programms');
+let gamesFilter = document.querySelector('.filter__title_games');
+let servicesFilter = document.querySelector('.filter__title_services');
+let programmsFilter = document.querySelector('.filter__title_programms');
+let servicesButtonTitle = document.querySelector('.filter__title_services');
+let gamesButtonTitle = document.querySelector('.filter__title_games');
+let programmsButtonTitle = document.querySelector('.filter__title_programms');
 let mainContainer = document.querySelector('.items_main');
 
-let search = document.querySelector('.top-line__search');
-let searchResultDiv = document.querySelector('.searchResult');
+let search = document.querySelector('.topline__search');
+let searchResultDiv = document.querySelector('.topline__searchResult');
 
 // FAQ
 
 document.addEventListener('click', function (e) {
-    if(e.target.classList.contains('question__title') || e.target.classList.contains('question__arrow')) {
+    if(e.target.classList.contains('question-title') || e.target.classList.contains('faq__arrow')) {
         e.target.parentNode.nextElementSibling.classList.toggle('visible');
-        e.target.parentNode.querySelector('.question__arrow').classList.toggle('rotate');
+        e.target.parentNode.querySelector('.faq__arrow').classList.toggle('rotate');
     }
 })
 
 // Поиск
-
-
 
 search.addEventListener('input', function() {
     let searchResultArr = [];
@@ -97,11 +95,11 @@ document.addEventListener('click', function(e){
 if(e.target == gamesButton || e.target == gamesFilter) {
     mainContainer.textContent = '';
     gamesButton.classList.add('filter__item_active');
-    gamesButtonTitle.classList.add('item__filter-title_active');
+    gamesButtonTitle.classList.add('filter__title_active');
     servicesButton.classList.remove('filter__item_active');
     programmsButton.classList.remove('filter__item_active');
-    servicesButtonTitle.classList.remove('item__filter-title_active');
-    programmsButtonTitle.classList.remove('item__filter-title_active');
+    servicesButtonTitle.classList.remove('filter__title_active');
+    programmsButtonTitle.classList.remove('filter__title_active');
     services.forEach(el => {
         if(el.type == 'Игры') {
             createCard(mainContainer, el);
@@ -110,11 +108,11 @@ if(e.target == gamesButton || e.target == gamesFilter) {
 } else if(e.target == servicesButton || e.target == servicesFilter) {
     mainContainer.textContent = '';
     servicesButton.classList.add('filter__item_active');
-    servicesButtonTitle.classList.add('item__filter-title_active');
+    servicesButtonTitle.classList.add('filter__title_active');
     gamesButton.classList.remove('filter__item_active');
     programmsButton.classList.remove('filter__item_active');
-    programmsButtonTitle.classList.remove('item__filter-title_active');
-    gamesButtonTitle.classList.remove('item__filter-title_active');
+    programmsButtonTitle.classList.remove('filter__title_active');
+    gamesButtonTitle.classList.remove('filter__title_active');
     services.forEach(el => {
         if(el.type == 'Сервисы') {
             createCard(mainContainer, el);
@@ -123,11 +121,11 @@ if(e.target == gamesButton || e.target == gamesFilter) {
 } else if(e.target == programmsButton || e.target == programmsFilter) {
     mainContainer.textContent = '';
     programmsButton.classList.add('filter__item_active');
-    programmsButtonTitle.classList.add('item__filter-title_active');
+    programmsButtonTitle.classList.add('filter__title_active');
     gamesButton.classList.remove('filter__item_active');
     servicesButton.classList.remove('filter__item_active');
-    servicesButtonTitle.classList.remove('item__filter-title_active');
-    gamesButtonTitle.classList.remove('item__filter-title_active');
+    servicesButtonTitle.classList.remove('filter__title_active');
+    gamesButtonTitle.classList.remove('filter__title_active');
     services.forEach(el => {
         if(el.type == 'Программы') {
             createCard(mainContainer, el);
