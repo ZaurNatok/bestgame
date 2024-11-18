@@ -20,6 +20,10 @@ body {
     margin: auto;
 }
 
+.logo {
+    width: 77px;
+}
+
 .top-line_mobile {
     display: none;
 }
