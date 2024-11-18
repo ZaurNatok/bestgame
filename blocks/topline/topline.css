@@ -1,7 +1,7 @@
-@import url('./__menu/topline__menu.css');
-@import url('./__search-area/topline__search-area.css');
-@import url('./__search/topline__search.css');
-@import url('./__searchResult/topline__searchResult.css');
+@import url('./menu/topline__menu.css');
+@import url('./search-area/topline__search-area.css');
+@import url('./search/topline__search.css');
+@import url('./searchResult/topline__searchResult.css');
 
 .topline {
     width: 1380px;

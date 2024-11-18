@@ -1,5 +1,5 @@
-@import url('./__title/popular__title.css');
-@import url('./__arrows/popular__arrows.css');
+@import url('./title/popular__title.css');
+@import url('./arrows/popular__arrows.css');
 
 .popular {
     width: 1120px;
