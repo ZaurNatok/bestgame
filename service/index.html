@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Unbounded:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../pages/index.css">
+    <link rel="stylesheet" href="../vendor/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="https://kit.fontawesome.com/533bd3dbce.js" crossorigin="anonymous"></script>
+        
+    <title>BestGame</title>
+</head>
+<body>
+
+<!-- header -->
+
+    <section class="topline">
+        <a href="../index.html"><img src="../img/vtb.png" alt="logo" class="logo logo_topline"></a>
+        <ul class="topline__menu">
+            <li class="menu-item"><a href="../index.html" class="link">Главная</a></li>
+            <li class="menu-item"><a href="#" class="link">Все сервисы</a></li>
+            <li class="menu-item"><a href="#" class="link">Вопрос / ответ</a></li>
+        </ul>
+        <div class="topline__search-area">
+            <input type="text" class="topline__search" placeholder="Поиск">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <div class="topline__searchResult"></div>
+        </div>
+    </section>
+
+<!-- Content -->
+
+<section class="content">
+    <div class="content__left">
+
+        <div class="content-block content-block_centered">
+            <img src="../img/steam.png" alt="Steam" class="content-block__img">
+            <div class="content-block__description">
+                <h1 class="content-block__title">Пополнение баланса <span class="service-title">Steam</span></h1>
+                <p class="content-block__subtitle">Аккаунты РФ и стран СНГ. Деньги поступят на аккаунт в течение 15 мин. В редких случаях — до 2 часов.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content__right">
+
+        <div class="content-block content-block_pay">
+            <h2 class="content-block__title">К оплате</h2>
+            <div class="content-block__information">
+                <p class="information">Перед оплатой обязательно ознакомьтесь с разделом «Вопросы и ответы» ниже</p>
+            </div>
+            <div class="pay-info">
+                <div class="pay-info__item">
+                    <h3 class="pay-info__type">Способ оплаты</h3>
+                    <p class="pay-info__pay-type">СБП</p>
+                </div>
+                <div class="pay-info__item">
+                    <h3 class="pay-info__type">Сумма пополнения</h3>
+                    <p class="pay-info__pay-type">350₽</p>
+                </div>
+                <div class="pay-info__item">
+                    <h3 class="pay-info__type">Комиссия сервиса</h3>
+                    <p class="pay-info__pay-type">50₽</p>
+                </div>
+                <div class="pay-info__item">
+                    <h3 class="pay-info__type">Итого</h3>
+                    <p class="pay-info__pay-type">400₽</p>
+                </div>
+            </div>
+
+            <button class="pay">Оплатить 400₽</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+    <footer class="footer">
+        <div class="footer__left">
+            <img src="../img/vtb.png" alt="logo" class="logo">
+            <p class="footer__copyright">© 2024 Best Game</p>
+        </div>
+        <div class="footer__center">
+            <ul class="footer__menu">
+                <li class="menu-item"><a href="#" class="link">Главная</a></li>
+                <li class="menu-item"><a href="#" class="link">Все сервисы</a></li>
+                <li class="menu-item"><a href="#" class="link">Вопрос / ответ</a></li>
+            </ul>
+        </div>
+        <div class="footer__right">
+            <div class="footer__support">
+                <h3 class="footer__title">Поддержка</h3>
+                <a href="#" class="footer__link">support@bestgame.com</a>
+            </div>
+            <a href="#" class="footer__link">Пользовательское соглашение</a>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+
+<!-- <script>
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // moving to next and previous slides
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
+</script>
+
+<script>
+    const swiper2 = new Swiper('.swiper-popular', {
+      //To add margin to slides
+          spaceBetween: 20,
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+
+    //   autoplay: {
+    //     delay: 6000,
+    //    },
+
+      //Breakpoints for Responsive slides
+      breakpoints: {
+        431: {
+          spaceBetween: 30,
+          slidesPerView: 4,
+          slidesPerGroup: 5,
+        },
+      },
+    });
+
+        //next slide
+document.querySelector('.popular__arrow_next').addEventListener('click', function(){
+    swiper2.slideNext();
+})
+
+//previous slide
+document.querySelector('.popular__arrow_previous').addEventListener('click', function(){
+   swiper2.slidePrev();
+})
+</script> -->
+
+<script src="../services.js"></script>
+<script src="./script.js"></script>
+
+
+
+</html>

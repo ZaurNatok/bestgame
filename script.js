@@ -60,6 +60,7 @@ el.forEach(element => {
 
             let title = elt.title;
             let imgLink = elt.imageLink;
+            let id = elt.id;
             
             const itemLink = document.createElement('a');
             const itemImage = document.createElement('img');
@@ -69,7 +70,7 @@ el.forEach(element => {
             itemImage.classList.add('searchResult__icon');
             itemImage.setAttribute('src', `${imgLink}`)
             itemTitle.classList.add('searchResult__title');
-            itemLink.setAttribute('href', `service.html`)
+            itemLink.setAttribute('href', `service/index.html?id=${id}`)
 
             searchResultDiv.appendChild(itemLink);
             itemLink.appendChild(itemImage);
@@ -168,7 +169,7 @@ function createCard(container, el) {
     itemImage.classList.add('item__image_div');
     itemTitle.classList.add('item__title');
     itemImage.setAttribute('style', `background-image: url(${imgLink});`)
-    itemLink.setAttribute('href', `service.html`)
+    itemLink.setAttribute('href', `service/index.html?id=${id}`)
 
     container.appendChild(itemLink);
     itemLink.appendChild(itemContainer);
