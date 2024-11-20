@@ -92,3 +92,33 @@
     color: #fff;
     font-weight: 700;
 }
+
+@media screen and (max-width:430px) {
+    .content {
+        width: calc(100% - 30px);
+        margin: auto;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .content-block {
+        flex-direction: column;
+    }
+
+    .content-block_centered {
+        align-items: baseline;
+    }
+
+    .content-block__img {
+        margin-bottom: 15px;
+    }
+
+    .content__left {
+        margin-bottom: 20px;
+    }
+
+    .content__right {
+        width: 100%;
+        margin: auto;
+    }
+}
