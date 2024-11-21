@@ -10,6 +10,7 @@ let servicesButtonTitle = document.querySelector('.filter__title_services');
 let gamesButtonTitle = document.querySelector('.filter__title_games');
 let programmsButtonTitle = document.querySelector('.filter__title_programms');
 let mainContainer = document.querySelector('.items_main');
+let newsContainer = document.querySelector('.news__wrapper');
 
 let search = document.querySelector('.topline__search');
 let searchResultDiv = document.querySelector('.topline__searchResult');
@@ -178,3 +179,54 @@ function createCard(container, el) {
 
     itemTitle.textContent = title;
 }
+
+//
+
+getNews();
+
+function getNews () {
+    return fetch(`https://newsdata.io/api/1/news?apikey=pub_5998959fa921d44bec0f4534d9d39848c29bd&q=steam&country=ru&language=ru `)
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data.results)
+
+        loadNews(data.results);
+        })
+} 
+
+function loadNews(newsArr) {
+    
+    newsArr.forEach(el => {
+        let title = el.title;
+        let imgLink = el.image_url;
+        let link = el.link;
+        let subtitle = el.description;
+
+        const itemLink = document.createElement('a');
+        const itemImage = document.createElement('div');
+        const itemContainer = document.createElement('div');
+        const itemTitle = document.createElement('h3');
+        const itemDescription = document.createElement('p');
+
+        itemLink.classList.add('news__item', 'swiper-slide');
+        itemImage.classList.add('news-image');
+        itemContainer.classList.add('news-description');
+        itemTitle.classList.add('news-title');
+        itemDescription.classList.add('news-subtitle');
+        itemImage.setAttribute('style', `background-image: url(${imgLink});`)
+        itemLink.setAttribute('href', `${link}`)
+        itemLink.setAttribute('target', 'blank')
+
+        newsContainer.appendChild(itemLink);
+        itemLink.appendChild(itemImage);
+        itemLink.appendChild(itemContainer);
+        itemContainer.appendChild(itemTitle);
+        itemContainer.appendChild(itemDescription);
+
+        itemTitle.textContent = title;
+        itemDescription.textContent = subtitle;
+
+    })
+}
+
+

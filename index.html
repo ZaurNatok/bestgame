@@ -19,9 +19,9 @@
 <!-- header -->
 
     <section class="topline">
-        <img src="./img/vtb.png" alt="logo" class="logo logo_topline">
+        <a href="./index.html"><img src="./img/vtb.png" alt="logo" class="logo logo_topline"></a>
         <ul class="topline__menu">
-            <li class="menu-item"><a href="#" class="link">Главная</a></li>
+            <li class="menu-item"><a href="./index.html" class="link">Главная</a></li>
             <li class="menu-item"><a href="#" class="link">Все сервисы</a></li>
             <li class="menu-item"><a href="#" class="link">Вопрос / ответ</a></li>
         </ul>
@@ -86,6 +86,60 @@
 <!-- items container -->    
 
     <div class="items items_main"></div>
+
+<!-- News -->
+
+    <sector class="news">
+        <h2 class="news__title">Новости</h2>
+        <div class="news__items swiper-news">
+            
+            <div class="news__wrapper swiper-wrapper">
+
+            <!-- <a href="#" class="news__item swiper-slide">
+                <div class="news-image" style="background-image: url(./img/Airbnb.jpg);"></div>
+                <div class="news-description">
+                    <h3 class="news-title">Lorem ipsum</h3>
+                    <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                </div>
+            </a>
+
+            <a href="#" class="news__item swiper-slide">
+                <div class="news-image" style="background-image: url(./img/Amazon.jpg);"></div>
+                <div class="news-description">
+                    <h3 class="news-title">Lorem ipsum</h3>
+                    <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                </div>
+            </a>
+
+            <a href="#" class="news__item swiper-slide">
+                <div class="news-image" style="background-image: url(./img/AdobeCreativeCloud.jpg);"></div>
+                <div class="news-description">
+                    <h3 class="news-title">Lorem ipsum</h3>
+                    <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                </div>
+            </a>
+
+            <a href="#" class="news__item swiper-slide">
+                <div class="news-image" style="background-image: url(./img/ApexLegendsMobile.jpg);"></div>
+                <div class="news-description">
+                    <h3 class="news-title">Lorem ipsum</h3>
+                    <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                </div>
+            </a>
+
+            <a href="#" class="news__item swiper-slide">
+                <div class="news-image" style="background-image: url(./img/App_Store.png);"></div>
+                <div class="news-description">
+                    <h3 class="news-title">Lorem ipsum</h3>
+                    <p class="news-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                </div>
+            </a> -->
+
+
+        </div>
+
+        </div>
+    </sector>
 
 <!-- FAQ -->     
 
@@ -190,8 +244,8 @@ const swiper = new Swiper('.swiper', {
     const swiper2 = new Swiper('.swiper-popular', {
       //To add margin to slides
           spaceBetween: 20,
-          slidesPerView: 2,
-          slidesPerGroup: 2,
+          slidesPerView: 1,
+          slidesPerGroup: 1,
 
     //   autoplay: {
     //     delay: 6000,
@@ -217,6 +271,39 @@ document.querySelector('.popular__arrow_previous').addEventListener('click', fun
    swiper2.slidePrev();
 })
 </script>
+
+<script>
+    const swiper3 = new Swiper('.swiper-news', {
+
+      //To add margin to slides
+      spaceBetween: 20,
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+
+    //   autoplay: {
+    //     delay: 6000,
+    //    },
+
+      //Breakpoints for Responsive slides
+      breakpoints: {
+        431: {
+          spaceBetween: 30,
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+      },
+    });
+
+//         //next slide
+// document.querySelector('.popular__arrow_next').addEventListener('click', function(){
+//     swiper2.slideNext();
+// })
+
+// //previous slide
+// document.querySelector('.popular__arrow_previous').addEventListener('click', function(){
+//    swiper2.slidePrev();
+// })
+    </script>
 
 <script src="./services.js"></script>
 <script src="./script.js"></script>
