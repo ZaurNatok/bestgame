@@ -67,7 +67,7 @@ el.forEach(element => {
             itemImage.classList.add('searchResult__icon');
             itemImage.setAttribute('src', `../${imgLink}`)
             itemTitle.classList.add('searchResult__title');
-            itemLink.setAttribute('href', `service/index.html?id=${id}`)
+            itemLink.setAttribute('href', `index.html?id=${id}`)
 
             searchResultDiv.appendChild(itemLink);
             itemLink.appendChild(itemImage);
