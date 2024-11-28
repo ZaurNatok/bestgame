@@ -23,6 +23,10 @@ body {
     display: block;
 }
 
+.hidden {
+    display: none;
+}
+
 .link {
     color: #fff;
     text-decoration: none;
@@ -94,6 +98,42 @@ body {
     line-height: 20px;
 }
 
+.popupType {
+    display: flex;
+}
+
+.popupType__item:not(:last-child) {
+    margin-right: 15px;
+}
+
+.popupType__item {
+    padding: 10px 15px;
+    background-color: #262B56;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.popupType__item_active {
+    padding: 10px 15px;
+    background-color: #009fdf;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.question {
+    padding: 2px 7px;
+    border-radius: 7px;
+    background-color: rgb(116, 119, 150);
+    font-weight: 700;
+}
+
+.fa-search {
+    color: rgb(116, 119, 150);
+    position: absolute;
+    left: 18px;
+    top: calc(50% - 12px);
+    font-size: 24px;
+}
 
 @media screen and (max-width:430px) {
 
