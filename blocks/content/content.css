@@ -16,6 +16,7 @@
     padding: 32px;
     color: #fff;
     display: flex;
+    margin-bottom: 20px;
 }
 
 .content-block_centered {
@@ -24,9 +25,6 @@
 
 .content-block__title {
     margin: 0 0 15px 0;
-}
-
-.content-block__title {
     font-size: 1.5em;
 }
 
@@ -43,6 +41,114 @@
     height: auto;
     margin-right: 32px;
     border-radius: 15px;
+}
+
+.choose-typePopup__types {
+    display: flex;
+}
+.content__parameters {
+    flex-direction: column;
+}
+
+
+
+
+.region-select {
+    position: relative;
+    width: 100%;
+}
+
+.choose-region {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+}
+
+.down-icon {
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 9px);
+}
+
+.region-select__dropdown {
+    background-color: #252B56;
+    border-radius: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    position: absolute;
+    width: calc(100% - 20px);
+    max-height: 250px;
+    overflow: scroll;
+}
+
+.payment-sum {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: none;
+    column-gap: 10px;
+    padding: 0;
+    margin: 10px 0 0 0;
+    margin-inline: 0;
+}
+
+.payment-input {
+    margin-top: 10px;
+}
+
+.form-label {
+    font-size: 12px;
+}
+
+.content-block__description_popup-region {
+    width: 100%;
+}
+
+.region-item {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.region-item:hover {
+    background-color: #181b36;
+}
+
+.region-item:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.region-title {
+    margin: 0;
+}
+
+.region-flag {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.region-select__sector {
+    width: calc(100% - 30px);
+    padding: 15px;
+    background-color: #262b56;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 15px;
+    border: solid 1px #252B56;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+}
+
+.region-select__sector:hover {
+    border: solid 1px #009fdf;
+}
+
+.region-select__sector:focus-visible {
+    outline: none;
 }
 
 .content__right {
@@ -72,6 +178,10 @@
     justify-content: space-between;
     margin: 10px 0;
     align-items: center;
+}
+
+.payment-parameters {
+    margin-top: 0;
 }
 
 .pay-info__item:not(:last-child) {
@@ -120,5 +230,10 @@
     .content__right {
         width: 100%;
         margin: auto;
+    }
+
+    .payment-sum {
+        flex-direction: column;
+        display: flex;
     }
 }
