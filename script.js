@@ -43,10 +43,6 @@ search.addEventListener('input', function() {
     }
 })
 
-// Мобильный поиск
-
-
-
 // Общая функция поиска
 
 function searchService(el) {
@@ -141,13 +137,11 @@ if(e.target == gamesButton || e.target == gamesFilter) {
 serviceCardsLoad(services);
 
 function serviceCardsLoad(services) {
-
 services.forEach(el => {
-
     if(el.isPopular == true) {
         const container = document.querySelector('.swiper-wrapper_popular');
         createCard(container, el)
-    } else if(el.type == 'Игры') {
+    } if(el.type == 'Игры') {
         const container = document.querySelector('.items_main');
         createCard(container, el)
     }
@@ -188,8 +182,6 @@ function getNews () {
     return fetch(`https://newsdata.io/api/1/news?apikey=pub_5998959fa921d44bec0f4534d9d39848c29bd&q=steam&country=ru&language=ru `)
     .then((response) => response.json())
     .then((data) => {
-        console.log(data.results)
-
         loadNews(data.results);
         })
 } 

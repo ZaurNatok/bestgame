@@ -27,7 +27,7 @@
         </ul>
         <div class="topline__search-area">
             <input type="text" class="topline__search" placeholder="Поиск">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa fa-search" aria-hidden="true"></i>
             <div class="topline__searchResult"></div>
         </div>
     </section>
@@ -44,6 +44,92 @@
                 <p class="content-block__subtitle">Аккаунты РФ и стран СНГ. Деньги поступят на аккаунт в течение 15 мин. В редких случаях — до 2 часов.</p>
             </div>
         </div>
+
+        <div class="content-block content__parameters">
+            <div class="choose-typePopup hidden">
+                <h2 class="choose-typePopup">Выберите способ пополнения</h2>
+                <div class="choose-typePopup__types">
+                    <p class="popupType__item popupType__item_payment popupType__item_active">Пополнить аккаунт</p>
+                    <p class="popupType__item popupType__item_voucher">Ваучер</p> 
+                </div>
+            </div>
+            <div class="choose-region  hidden">
+                <h2 class="choose-region">Выберите регион аккаунта</h2>
+                <div class="choose-region">
+                    <div class="region-select__sector">
+                        <img src="../img/usa.jpg" class="region-flag">
+                        <div class="region-select__title">США</div>
+                        <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="region-select__dropdown hidden"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block content__parameters content__parameters_pay-steam hidden">
+            <h2 class="payment-parameters">Пополнение аккаунта</h2>
+            <form action="" class="payment">
+                <label for="steam-login" class="form-label">Где искать <span class="question">?</span></label>
+                <input type="text" class="region-select__sector payment-input" id="steam-login" placeholder="Введите логин Steam">
+                <fieldset class="payment-sum">
+                    <div class="">
+                        <label for="sum" class="form-label">Сумма пополнения в рублях</label>
+                        <input type="number" name="sum" id="sum" class="region-select__sector payment-input" placeholder="От 350 рублей"/>
+                    </div>
+                    <div class="">
+                        <label for="sumForPopup" class="form-label">К зачислению на Steam</label>
+                        <input type="number" name="sumForPopup" id="sumForPopup" class="region-select__sector payment-input" disabled/>
+                    </div>
+                  </fieldset>
+            </form>
+        </div>
+
+        <div class="choose-sum"></div>
+        <div class="voucherEmail content-block content__parameters hidden">
+            <h2 class="payment-parameters">Оформление покупки</h2>
+            <form action="" class="payment">
+                <label for="steam-email" class="form-label">Получить ваучер и инструкцию</label>
+                <input type="text" class="region-select__sector payment-input" id="steam-email" placeholder="Введите ваш email">
+            </form>
+        </div>
+
+
+        <!-- <div class="content-block content-block_centered content-block_popupType">
+            <div class="content-block__description content-block__description_popup-region">
+                <h1 class="content-block__title content-block__title_popup"></h1>
+                <div class="popupType">
+                    <p class="popupType__item popupType__item_active">Пополнить аккаунт</p>
+                    <p class="popupType__item">Ваучер</p> 
+                    
+                   <div class="region-select">
+                        <div class="choose-region">
+                            <div class="region-select__sector">
+                                <img src="../img/usa.jpg" class="region-flag">
+                                <div class="region-select__title">США</div>
+                                <i class="fa fa-chevron-down down-icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="region-select__dropdown">
+                            <div class="region-item">
+                                <img src="../img/austria.png" class="region-flag">
+                                <p class="region-title">Австрия</p>
+                            </div>
+                            <div class="region-item">
+                                <img src="../img/france.webp" class="region-flag">
+                                <p class="region-title">Франция</p>
+                            </div>
+                            <div class="region-item">
+                                <img src="../img/belgium.webp" class="region-flag">
+                                <p class="region-title">Бельгия</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div> -->
 
     </div>
 

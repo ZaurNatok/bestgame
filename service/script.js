@@ -2,6 +2,16 @@
 let serviceTitle = document.querySelector('.service-title');
 let serviceImage = document.querySelector('.content-block__img');
 let serviceSubtitle = document.querySelector('.content-block__subtitle');
+let popupTypes = document.querySelector('.choose-typePopup');
+let chooseRegion = document.querySelector('.choose-region');
+let showDropdownRegionsButton = document.querySelector('.region-select__sector');
+let popupTypesTitle = document.querySelector('.content-block__title_popup');
+let regionContainer = document.querySelector('.content-block__description_popup-region');
+let regionSelect = document.querySelector('.region-select');
+let steamPay = document.querySelector('.content__parameters_pay-steam');
+let voucherPay = document.querySelector('.voucherEmail');
+let paymentButton = document.querySelector('.popupType__item_payment');
+let voucherButton = document.querySelector('.popupType__item_voucher');
 
 let search = document.querySelector('.topline__search');
 let searchResultDiv = document.querySelector('.topline__searchResult');
@@ -10,35 +20,142 @@ const url = new URL(
     document.location.href
 )
 
-let serviceId = url.searchParams.get('id');
+// Определяем id сервиса
 
+let serviceId = url.searchParams.get('id');
 getService(serviceId);
+
+// данные названия сервиса, субтайтл + картинка по id сервиса
 
 function getService(id) {
     services.forEach(el => {
-        if(el.id == id) {
+        if (el.id == id) {
+            id = el.id;
             serviceTitle.textContent = el.title;
             serviceImage.setAttribute('src', '.' + `${el.imageLink}`)
             serviceSubtitle.textContent = el.subtitle;
+            getServiceParamentres(id);
         }
     })
 }
 
+// параметры сервиса
+
+function getServiceParamentres(id) {
+    services.forEach(el => {
+        if (el.id == id) {
+
+            if(el.popupTypes.length < 2) {
+                voucherPay.classList.remove('hidden');
+            }
+            
+            // если сервис Steam
+            if (el.title == 'Steam') {
+                popupTypes.classList.remove('hidden');
+                steamPay.classList.remove('hidden');
+            }
+        } if (el.id == id && el.region && el.region.length > 1) {
+            chooseRegion.classList.remove('hidden');
+            let regionFlag = document.querySelector('.region-flag');
+            regionFlag.setAttribute('src', `.${el.region[0].img}`);
+            let regionTitle = document.querySelector('.region-select__title');
+            regionTitle.textContent = el.region[0].title;
+            let dropDown = document.querySelector('.region-select__dropdown');
+
+            el.region.forEach(el => {
+                const dropdownRegionItem = document.createElement('div');
+                const dropdownRegionImage = document.createElement('img');
+                const dropdownRegionTitle = document.createElement('p');
+
+                dropdownRegionItem.classList.add('region-item');
+                dropdownRegionImage.classList.add('region-flag');
+                dropdownRegionTitle.classList.add('region-title');
+
+                dropDown.appendChild(dropdownRegionItem);
+                dropdownRegionItem.appendChild(dropdownRegionImage);
+                dropdownRegionItem.appendChild(dropdownRegionTitle);
+
+                dropdownRegionImage.setAttribute('src', `.${el.img}`);
+                dropdownRegionTitle.textContent = el.title;
+            })
+
+            showDropdownRegionsButton.addEventListener('click', function () {
+                dropDown.classList.toggle('hidden');
+            }
+            )
+
+            // Определяем выбранный в выпадающем меню сервис
+
+            dropDown.addEventListener('click', function (e) {
+                if (e.target.classList.contains('region-item')) {
+                    let chosenRegionTitle = e.target.querySelector('.region-title').textContent;
+                    let chosenRegionFlag = e.target.querySelector('.region-flag').getAttribute('src');
+                    dropDown.classList.toggle('hidden');
+                    chosenRegion(chosenRegionTitle, chosenRegionFlag);
+                } if (e.target.classList.contains('region-flag')) {
+                    let chosenRegionTitle = e.target.nextElementSibling.textContent;
+                    let chosenRegionFlag = e.target.getAttribute('src');
+                    dropDown.classList.toggle('hidden');
+                    chosenRegion(chosenRegionTitle, chosenRegionFlag);
+                } if (e.target.classList.contains('region-title')) {
+                    let chosenRegionTitle = e.target.textContent;
+                    let chosenRegionFlag = e.target.previousSibling.getAttribute('src');
+                    dropDown.classList.toggle('hidden');
+                    chosenRegion(chosenRegionTitle, chosenRegionFlag);
+                }
+            })
+        } 
+    })
+}
+
+// Работаем с выбранным регионом из выпадающего списка
+
+function chosenRegion(name, flag) {
+    let regionTitle = document.querySelector('.region-select__title');
+    let regionFlag = document.querySelector('.region-select__sector').querySelector('.region-flag');
+    regionTitle.textContent = name;
+    regionFlag.setAttribute('src', `${flag}`)
+}
+
+// Выбор способа пополнения
+
+document.addEventListener('click', function(e) {
+    if(e.target == paymentButton) {
+        if(!paymentButton.classList.contains('popupType__item_active')) {
+            paymentButton.classList.add('popupType__item_active');
+            voucherButton.classList.remove('popupType__item_active');
+        } if(steamPay.classList.contains('hidden')) {
+            steamPay.classList.remove('hidden');
+            voucherPay.classList.add('hidden');
+        }
+    }
+
+    if(e.target == voucherButton) {
+        if(!voucherButton.classList.contains('popupType__item_active')) {
+            voucherButton.classList.add('popupType__item_active');
+            paymentButton.classList.remove('popupType__item_active');
+        } if(!steamPay.classList.contains('hidden')) {
+            steamPay.classList.add('hidden');
+            voucherPay.classList.remove('hidden');
+        }
+    }
+})
+
 // Поиск
 
-search.addEventListener('input', function() {
+search.addEventListener('input', function () {
     let searchResultArr = [];
 
     services.forEach(el => {
-        if(el.title.toLowerCase().includes(search.value.toLowerCase())) {
+        if (el.title.toLowerCase().includes(search.value.toLowerCase())) {
             searchResultArr.push(el.title);
         } else {
             searchResultDiv.classList.remove('visible');
             searchResultDiv.textContent = '';
-        }  
+        }
     })
     searchService(searchResultArr);
-    if(searchResultArr.length == 0) {
+    if (searchResultArr.length == 0) {
         searchResultDiv.textContent = 'Ничего не найдено';
     }
 })
@@ -50,41 +167,40 @@ function searchService(el) {
     searchResultDiv.textContent = ''
     searchResultDiv.classList.add('visible');
 
-el.forEach(element => {
+    el.forEach(element => {
 
-    services.forEach(elt => {
-        if(elt.title == element) {
+        services.forEach(elt => {
+            if (elt.title == element) {
 
-            let title = elt.title;
-            let imgLink = elt.imageLink;
-            let id = elt.id;
-            
-            const itemLink = document.createElement('a');
-            const itemImage = document.createElement('img');
-            const itemTitle = document.createElement('h3');
+                let title = elt.title;
+                let imgLink = elt.imageLink;
+                let id = elt.id;
 
-            itemLink.classList.add('searchResult__item');
-            itemImage.classList.add('searchResult__icon');
-            itemImage.setAttribute('src', `../${imgLink}`)
-            itemTitle.classList.add('searchResult__title');
-            itemLink.setAttribute('href', `index.html?id=${id}`)
+                const itemLink = document.createElement('a');
+                const itemImage = document.createElement('img');
+                const itemTitle = document.createElement('h3');
 
-            searchResultDiv.appendChild(itemLink);
-            itemLink.appendChild(itemImage);
-            itemLink.appendChild(itemTitle);
+                itemLink.classList.add('searchResult__item');
+                itemImage.classList.add('searchResult__icon');
+                itemImage.setAttribute('src', `../${imgLink}`)
+                itemTitle.classList.add('searchResult__title');
+                itemLink.setAttribute('href', `index.html?id=${id}`)
 
-            itemTitle.textContent = title;
-        }
+                searchResultDiv.appendChild(itemLink);
+                itemLink.appendChild(itemImage);
+                itemLink.appendChild(itemTitle);
+
+                itemTitle.textContent = title;
+            }
+        })
     })
-})
 
-if(search.value == '') {
-    searchResultDiv.textContent = '';
-    searchResultDiv.classList.remove('visible');
+    if (search.value == '') {
+        searchResultDiv.textContent = '';
+        searchResultDiv.classList.remove('visible');
+    }
+
+
 }
 
-    
-}
-
-// console.log(getService(serviceId));
 

@@ -4,7 +4,20 @@ const services = [
         title: 'Valorant',
         subtitle: 'Для аккаунтов США, Европы и Турции',
         addInfo: 'Официальный партнер',
-        region: ['США', 'Европа','Турция'],
+        popupTypes: ['Ваучер'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg'
+            }, 
+            {
+                title: 'Европа',
+                img: './img/europe.png'
+            }, 
+            {
+                title: 'Турция',
+                img: './img/turkey.webp'
+            }],
         isVoucher: true,
         clientInfo: 'email',
         voucherNominalsUSD: ['5$', '10$', '20$', '25$', '35$', '50$', '100$'],
@@ -19,6 +32,7 @@ const services = [
         title: 'Roblox',
         subtitle: 'При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         region: ['США'],
         isVoucher: true,
         clientInfo: 'email',
@@ -32,7 +46,16 @@ const services = [
         title: 'Razer Gold',
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
-        region: ['Любой регион', 'Турция'],
+        popupTypes: ['Ваучер'],
+        region: [ 
+            {
+                title: 'Любой регион',
+                img: './img/russia.webp'
+            }, 
+            {
+                title: 'Турция',
+                img: './img/turkey.webp'
+            }],
         isVoucher: true,
         clientInfo: 'email',
         voucherNominalsUSD: ['10$', '20$'],
@@ -46,6 +69,7 @@ const services = [
         title: 'PUBG mobile',
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         region: ['Любой регион'],
         isVoucher: true,
         clientInfo: 'email',
@@ -59,6 +83,7 @@ const services = [
         title: 'Point Blank',
         subtitle: 'Для аккаунтов Турции. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         region: ['Турция'],
         isVoucher: true,
         clientInfo: 'email',
@@ -73,6 +98,7 @@ const services = [
         title: 'Mobile Legends',
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         region: ['Любой регион'],
         isVoucher: true,
         clientInfo: 'email',
@@ -88,6 +114,7 @@ const services = [
         title: 'Minecraft',
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         region: ['Любой регион'],
         isVoucher: true,
         clientInfo: 'email',
@@ -102,9 +129,18 @@ const services = [
         title: 'League of Legends',
         subtitle: 'При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
-        region: ['Европа', 'США'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg'
+            }, 
+            {
+                title: 'Европа',
+                img: './img/europe.png'
+            }],
         voucherNominalsUSD: ['5$', '10$', '20$', '50$'],
         voucherNominalsEUR: ['5€', '10€', '20€', '50€'],
         isPopular: false,
@@ -116,9 +152,18 @@ const services = [
         title: 'HearthStone',
         subtitle: 'Для аккаунтов США и Европы. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
-        region: ['Европа и США'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg'
+            }, 
+            {
+                title: 'Европа',
+                img: './img/europe.png'
+            }],
         voucherNominalsANY: ['1 Pack'],
         isPopular: false,
         imageLink: './img/Hearthstone.jpg',
@@ -129,6 +174,7 @@ const services = [
         title: 'Genshin Impact',
         subtitle: 'Для аккаунтов любого региона',
         addInfo: 'Новинка',
+        popupTypes: ['Ваучер'],
         isVoucher: false,
         clientInfo: ['UID', 'Server'],
         region: null,
@@ -244,6 +290,7 @@ const services = [
         title: 'Free Fire',
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
         region: ['Любой регион'],
@@ -258,6 +305,7 @@ const services = [
         title: 'Fortnite',
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
         region: ['США'],
@@ -272,6 +320,7 @@ const services = [
         title: 'Black Desert',
         subtitle: 'Для аккаунтов Турции. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
         region: ['Турция'],
@@ -286,6 +335,7 @@ const services = [
         title: 'Apex Legends Mobile',
         subtitle: 'Для аккаунтов Германии. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
         region: ['Германия'],
@@ -300,11 +350,24 @@ const services = [
         title: 'Steam',
         subtitle: 'Аккаунты РФ и стран СНГ. Деньги поступят на аккаунт в течение 15 мин. В редких случаях — до 2 часов.',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Пополнить аккаунт', 'Ваучер'],
         isVoucher: true,
         accountPopup: true,
         accountPopupInfo: 'логин Steam',
         clientInfo: 'email',
-        region: ['Россия', 'Казасхатн', 'Страны СНГ'],
+        region: [ 
+            {
+                title: 'Россия',
+                img: './img/russia.webp'
+            }, 
+            {
+                title: 'Казахстан',
+                img: './img/kz.jpg'
+            }, 
+            {
+                title: 'Страны СНГ',
+                img: './img/cia.jpg'
+            }],
         voucherNominalsUSD: ['5$', '10$', '20$', '50$'],
         voucherNominalsEUR: ['5€', '10€', '20€', '50€'],
         isPopular: true,
@@ -316,11 +379,64 @@ const services = [
         title: 'Playstation Network',
         subtitle: 'При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         accountPopup: false,
         accountPopupInfo: '',
         clientInfo: 'email',
-        region: ['США', 'Индия', 'Польша', 'Бельгия', 'Франция', 'Нидерланды', 'Австрия', 'Германия', 'Великобритания', 'Бразилия', 'Ливан', 'Арабские Эмираты', 'Финляндия'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg'
+            }, 
+            {
+                title: 'Индия',
+                img: './img/india.png'
+            }, 
+            {
+                title: 'Польша',
+                img: './img/poland.png'
+            }, 
+            {
+                title: 'Бельгия',
+                img: './img/belgium.webp'
+            }, 
+            {
+                title: 'Франция',
+                img: './img/france.webp'
+            }, 
+            {
+                title: 'Нидерланды',
+                img: './img/holland.png'
+            }, 
+            {
+                title: 'Австрия',
+                img: './img/austria.png'
+            }, 
+            {
+                title: 'Германия',
+                img: './img/germany.webp'
+            }, 
+            {
+                title: 'Великобритания',
+                img: './img/uk.jpg'
+            }, 
+            {
+                title: 'Бразилия',
+                img: './img/brazil.png'
+            }, 
+            {
+                title: 'Ливан',
+                img: './img/livan.jpg'
+            }, 
+            {
+                title: 'Арабские Эмираты',
+                img: './img/uae.png'
+            }, 
+            {
+                title: 'Финляндия',
+                img: './img/finland.jpg'
+            }],
         voucherNominalsUSD: ['10$', '25$', '50$', '75$', '100$'],
         isPopular: true,
         imageLink: './img/playstation.png',
@@ -331,11 +447,20 @@ const services = [
         title: 'Battle.net',
         subtitle: 'Для аккаунтов США и Европы. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         accountPopup: false,
         accountPopupInfo: '',
         clientInfo: 'email',
-        region: ['Европа', 'США'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg'
+            }, 
+            {
+                title: 'Европа',
+                img: './img/europe.png'
+            }],
         voucherNominalsUSD: ['20$', '50$'],
         voucherNominalsEUR: ['20€', '50€'],
         isPopular: true,
@@ -347,11 +472,21 @@ const services = [
         title: 'Xbox',
         subtitle: 'Для аккаунтов США или Турции. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         accountPopup: false,
         accountPopupInfo: '',
         clientInfo: 'email',
-        region: ['США', 'Турция'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg'
+            },
+            {
+                title: 'Турция',
+                img: './img/turkey.webp'
+            }
+        ],
         voucherNominalsUSD: ['10$', '15$'],
         voucherNominalsTRY: ['Turkey Ultimate 1 Month'],
         isPopular: true,
@@ -363,6 +498,7 @@ const services = [
         title: 'Airbnb',
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         accountPopup: false,
         accountPopupInfo: '',
@@ -378,6 +514,7 @@ const services = [
         title: 'Amazon',
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         accountPopup: false,
         accountPopupInfo: '',
@@ -393,11 +530,36 @@ const services = [
         title: 'App Store',
         subtitle: 'Активировать ваучер можно только для аккаунта США или Турции.',
         addInfo: 'Официальный партнер',
+        popupTypes: ['Ваучер'],
         isVoucher: true,
         accountPopup: false,
         accountPopupInfo: '',
         clientInfo: 'email',
-        region: ['Россия', 'США', 'Турция', 'Бельгия', 'Польша', 'Арабские Эмираты'],
+        region: [ 
+            {
+                title: 'Россия',
+                img: './img/russia.webp'
+            }, 
+            {
+                title: 'США',
+                img: './img/usa.jpg'
+            }, 
+            {
+                title: 'Турция',
+                img: './img/turkey.webp'
+            }, 
+            {
+                title: 'Бельгия',
+                img: './img/belgium.webp'
+            }, 
+            {
+                title: 'Польша',
+                img: './img/poland.png'
+            },
+            {
+                title: 'Арабские Эмираты',
+                img: './img/uae.png'
+            }],
         voucherNominalsRUR: ['500 ₽', '1000 ₽'],
         voucherNominalsUSD: ['2$', '3$', '4$', '5$', '10$', '15$', '20$', '25$', '30$', '40$', '50$', '60$', '70$', '100$', '200$', '300$', '400$', '500$'],
         isPopular: false,
@@ -409,6 +571,7 @@ const services = [
         title: 'ChatGPT',
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/ChatGPT.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: false,
         id: 22
     },
@@ -417,6 +580,7 @@ const services = [
         title: 'Ebay',
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/ebay.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: false,
         id: 23
     },
@@ -425,6 +589,36 @@ const services = [
         title: 'Netflix',
         subtitle: 'Для аккаунтов Турции. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/netflix.jpg',
+        region: [ 
+            {
+                title: 'Турция',
+                img: './img/turkey.webp'
+            }, 
+            {
+                title: 'Европа',
+                img: './img/europe.png'
+            }, 
+            {
+                title: 'Великобритания',
+                img: './img/uk.jpg'
+            }, 
+            {
+                title: 'Саудовская Аравия',
+                img: './img/saudi.webp'
+            }, 
+            {
+                title: 'Польша',
+                img: './img/poland.png'
+            }, 
+            {
+                title: 'Арабские Эмираты',
+                img: './img/uae.png'
+            }, 
+            {
+                title: 'США',
+                img: './img/usa.jpg'
+            }],
+        popupTypes: ['Ваучер'],
         isPopular: true,
         id: 24
     },
@@ -433,6 +627,7 @@ const services = [
         title: 'Nintendo eShop',
         subtitle: 'При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/nintendo.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: true,
         id: 25
     },
@@ -441,6 +636,7 @@ const services = [
         title: 'Spotify',
         subtitle: 'При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/spotify.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: false,
         id: 26
     },
@@ -449,6 +645,7 @@ const services = [
         title: 'TIDAL',
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/tidal.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: false,
         id: 27
     },
@@ -457,6 +654,7 @@ const services = [
         title: 'Twitch',
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/twitch.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: false,
         id: 28
     },
@@ -465,6 +663,7 @@ const services = [
         title: 'Adobe Creative Cloud',
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/adobeCreativeCloud.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: false,
         id: 29
     },
@@ -473,6 +672,7 @@ const services = [
         title: 'Discord Nitro',
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         imageLink: './img/discord.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: false,
         id: 30
     },
@@ -481,6 +681,7 @@ const services = [
         title: 'Microsoft Windows',
         subtitle: 'Для аккаунтов РФ. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         imageLink: './img/MSWindows.jpg',
+        popupTypes: ['Ваучер'],
         isPopular: false,
         id: 31
     }
