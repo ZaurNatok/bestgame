@@ -14,6 +14,7 @@ let voucherPay = document.querySelector('.voucherEmail');
 let paymentButton = document.querySelector('.popupType__item_payment');
 let voucherButton = document.querySelector('.popupType__item_voucher');
 let voucherNominalsContainer = document.querySelector('.choose-sum__items');
+let vouchers = document.querySelector('.choose-sum');
 
 let regionTitle = document.querySelector('.region-select__title');
 
@@ -60,6 +61,7 @@ function getServiceParamentres(id) {
                 console.log('yes')
                 popupTypesSteam.classList.remove('hidden');
                 steamPay.classList.remove('hidden');
+                vouchers.classList.add('hidden');
             }
         } if (el.id == id && el.region && el.region.length > 1) {
             chooseRegion.classList.remove('hidden');
@@ -180,9 +182,11 @@ document.addEventListener('click', function(e) {
         if(!voucherButton.classList.contains('popupType__item_active')) {
             voucherButton.classList.add('popupType__item_active');
             paymentButton.classList.remove('popupType__item_active');
+            vouchers.classList.add('hidden');
         } if(!steamPay.classList.contains('hidden')) {
             steamPay.classList.add('hidden');
             voucherPay.classList.remove('hidden');
+            vouchers.classList.remove('hidden');
         }
     }
 })
