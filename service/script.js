@@ -3,6 +3,7 @@ let serviceTitle = document.querySelector('.service-title');
 let serviceImage = document.querySelector('.content-block__img');
 let serviceSubtitle = document.querySelector('.content-block__subtitle');
 let popupTypes = document.querySelector('.choose-typePopup');
+let popupTypesSteam = document.querySelector('.choose-typePopup_steam');
 let chooseRegion = document.querySelector('.choose-region');
 let showDropdownRegionsButton = document.querySelector('.region-select__sector');
 let popupTypesTitle = document.querySelector('.content-block__title_popup');
@@ -12,7 +13,6 @@ let steamPay = document.querySelector('.content__parameters_pay-steam');
 let voucherPay = document.querySelector('.voucherEmail');
 let paymentButton = document.querySelector('.popupType__item_payment');
 let voucherButton = document.querySelector('.popupType__item_voucher');
-let vouchers = document.querySelector('.choose-sum');
 let voucherNominalsContainer = document.querySelector('.choose-sum__items');
 
 let regionTitle = document.querySelector('.region-select__title');
@@ -57,7 +57,8 @@ function getServiceParamentres(id) {
             
             // если сервис Steam
             if (el.title == 'Steam') {
-                popupTypes.classList.remove('hidden');
+                console.log('yes')
+                popupTypesSteam.classList.remove('hidden');
                 steamPay.classList.remove('hidden');
             }
         } if (el.id == id && el.region && el.region.length > 1) {
@@ -166,7 +167,7 @@ document.addEventListener('click', function(e) {
         } if(steamPay.classList.contains('hidden')) {
             steamPay.classList.remove('hidden');
             voucherPay.classList.add('hidden');
-            vouchers.classList.add('hidden');
+            voucherPay.classList.add('hidden');
         }
     }
 
@@ -182,7 +183,6 @@ document.addEventListener('click', function(e) {
         } if(!steamPay.classList.contains('hidden')) {
             steamPay.classList.add('hidden');
             voucherPay.classList.remove('hidden');
-            vouchers.classList.remove('hidden');
         }
     }
 })
