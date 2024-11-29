@@ -50,9 +50,6 @@
     flex-direction: column;
 }
 
-
-
-
 .region-select {
     position: relative;
     width: 100%;
@@ -167,6 +164,12 @@
     width: calc(100% - 24px);
     background-color: #252B56;
     border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.fa-info-circle {
+    margin-right: 10px;
 }
 
 .information {
@@ -180,7 +183,7 @@
     align-items: center;
 }
 
-.payment-parameters {
+.payment-parameters, .choose-typePopup {
     margin-top: 0;
 }
 
@@ -201,6 +204,26 @@
     border-radius: 15px;
     color: #fff;
     font-weight: 700;
+}
+
+.choose-sum__items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choose-sum__item {
+    padding: 10px 15px;
+    background-color: #252B56;
+    transition: .3s;
+    color: #888baa;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 0 5px 5px 0;
+}
+
+.choose-sum__item:hover {
+    color: #fff;
 }
 
 @media screen and (max-width:430px) {

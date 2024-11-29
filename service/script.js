@@ -12,6 +12,10 @@ let steamPay = document.querySelector('.content__parameters_pay-steam');
 let voucherPay = document.querySelector('.voucherEmail');
 let paymentButton = document.querySelector('.popupType__item_payment');
 let voucherButton = document.querySelector('.popupType__item_voucher');
+let vouchers = document.querySelector('.choose-sum');
+let voucherNominalsContainer = document.querySelector('.choose-sum__items');
+
+let regionTitle = document.querySelector('.region-select__title');
 
 let search = document.querySelector('.topline__search');
 let searchResultDiv = document.querySelector('.topline__searchResult');
@@ -23,7 +27,9 @@ const url = new URL(
 // Определяем id сервиса
 
 let serviceId = url.searchParams.get('id');
+let theService = services.find((element) => element.id == serviceId);
 getService(serviceId);
+loadVouchers(regionTitle.textContent);
 
 // данные названия сервиса, субтайтл + картинка по id сервиса
 
@@ -44,9 +50,9 @@ function getService(id) {
 function getServiceParamentres(id) {
     services.forEach(el => {
         if (el.id == id) {
-
             if(el.popupTypes.length < 2) {
                 voucherPay.classList.remove('hidden');
+                regionTitle.textContent = el.region[0].title;
             }
             
             // если сервис Steam
@@ -84,7 +90,7 @@ function getServiceParamentres(id) {
             }
             )
 
-            // Определяем выбранный в выпадающем меню сервис
+            // Определяем выбранную в выпадающем меню страну
 
             dropDown.addEventListener('click', function (e) {
                 if (e.target.classList.contains('region-item')) {
@@ -115,11 +121,44 @@ function chosenRegion(name, flag) {
     let regionFlag = document.querySelector('.region-select__sector').querySelector('.region-flag');
     regionTitle.textContent = name;
     regionFlag.setAttribute('src', `${flag}`)
+    loadVouchers(name);
+}
+
+// показываем номиналы ваучеров в зависимости от страны
+
+function loadVouchers(country) {
+
+    if(theService.popupTypes.length < 2) {
+        // let regionTitle = document.querySelector('.region-select__title');
+        let theCountryVouchers = theService.region.find((element) => element.title == country);
+        
+        voucherNominalsContainer.textContent = '';
+
+        theCountryVouchers.voucherNominals.forEach(el => {
+            let voucherNominal = document.createElement('p');
+            voucherNominal.classList.add('choose-sum__item');
+            voucherNominalsContainer.appendChild(voucherNominal);
+            voucherNominal.textContent = el;
+        })
+    } else {
+
+        let theCountryVouchers = theService.region.find((element) => element.title == country);
+        
+        voucherNominalsContainer.textContent = '';
+
+        theCountryVouchers.voucherNominals.forEach(el => {
+            let voucherNominal = document.createElement('p');
+            voucherNominal.classList.add('choose-sum__item');
+            voucherNominalsContainer.appendChild(voucherNominal);
+            voucherNominal.textContent = el;
+        })
+    }
 }
 
 // Выбор способа пополнения
 
 document.addEventListener('click', function(e) {
+
     if(e.target == paymentButton) {
         if(!paymentButton.classList.contains('popupType__item_active')) {
             paymentButton.classList.add('popupType__item_active');
@@ -127,16 +166,23 @@ document.addEventListener('click', function(e) {
         } if(steamPay.classList.contains('hidden')) {
             steamPay.classList.remove('hidden');
             voucherPay.classList.add('hidden');
+            vouchers.classList.add('hidden');
         }
     }
 
     if(e.target == voucherButton) {
+
+        loadVouchers(regionTitle.textContent);
+
+        // активация/деактивация кнопок выбора способа оплаты - ваучер или оплата
+
         if(!voucherButton.classList.contains('popupType__item_active')) {
             voucherButton.classList.add('popupType__item_active');
             paymentButton.classList.remove('popupType__item_active');
         } if(!steamPay.classList.contains('hidden')) {
             steamPay.classList.add('hidden');
             voucherPay.classList.remove('hidden');
+            vouchers.classList.remove('hidden');
         }
     }
 })

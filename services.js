@@ -8,21 +8,24 @@ const services = [
         region: [ 
             {
                 title: 'США',
-                img: './img/usa.jpg'
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
             }, 
             {
                 title: 'Европа',
-                img: './img/europe.png'
+                img: './img/europe.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5€', '10€', '20€', '50€', '100€']
             }, 
             {
                 title: 'Турция',
-                img: './img/turkey.webp'
+                img: './img/turkey.webp',
+                voucherCurrency: 'TRY',
+                voucherNominals: ['150VP', '515VP', '1200VP', '1835VP', '2950VP', '6115VP']
             }],
         isVoucher: true,
         clientInfo: 'email',
-        voucherNominalsUSD: ['5$', '10$', '20$', '25$', '35$', '50$', '100$'],
-        voucherNominalsEUR: ['5€', '10€', '20€', '50€', '100€'],
-        voucherNominalsTRY: ['150VP', '515VP', '1200VP', '1835VP', '2950VP', '6115VP'],
         isPopular: false,
         imageLink: './img/valorant.jpg',
         id: 1
@@ -33,10 +36,15 @@ const services = [
         subtitle: 'При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
         popupTypes: ['Ваучер'],
-        region: ['США'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['10$', '20$']
+            }],
         isVoucher: true,
         clientInfo: 'email',
-        voucherNominalsUSD: ['10$', '20$'],
         isPopular: true,
         imageLink: './img/roblox.jpg',
         id: 2
@@ -50,16 +58,18 @@ const services = [
         region: [ 
             {
                 title: 'Любой регион',
-                img: './img/russia.webp'
+                img: './img/russia.webp',
+                voucherCurrency: 'USD',
+                voucherNominals: ['5$', '10$']
             }, 
             {
                 title: 'Турция',
-                img: './img/turkey.webp'
+                img: './img/turkey.webp',
+                voucherCurrency: 'TRY',
+                voucherNominals: ['50₺', '100₺', '250₺', '500₺']
             }],
         isVoucher: true,
         clientInfo: 'email',
-        voucherNominalsUSD: ['10$', '20$'],
-        voucherNominalsTRY: ['50₺', '100₺', '250₺', '500₺'],
         isPopular: false,
         imageLink: './img/RazerGold.jpg',
         id: 3
@@ -70,10 +80,16 @@ const services = [
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
         popupTypes: ['Ваучер'],
-        region: ['Любой регион'],
+        region: [
+            {
+                title: 'Любой регион',
+                img: './img/russia.webp',
+                voucherCurrency: 'USD',
+                voucherNominals: ['60UC', '300 + 25UC', '600 + 60UC', '1500 + 300UC', '3000 + 850UC']
+            }
+        ],
         isVoucher: true,
         clientInfo: 'email',
-        voucherNominalsANY: ['60UC', '300 + 25UC', '600 + 60UC', '1500 + 300UC', '3000 + 850UC'],
         isPopular: false,
         imageLink: './img/PUBGmobile.jpg',
         id: 4
@@ -84,11 +100,16 @@ const services = [
         subtitle: 'Для аккаунтов Турции. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
         popupTypes: ['Ваучер'],
-        region: ['Турция'],
+        region: [
+            {
+                title: 'Турция',
+                img: './img/turkey.webp',
+                voucherCurrency: 'TG',
+                voucherNominals: ['900TG', '1800TG', '4500TG', '10400TG', '21000TG']
+            }
+        ],
         isVoucher: true,
         clientInfo: 'email',
-        voucherNominalsTRY: ['900', '1800', '4500', '10400', '21000'],
-        voucherCurrency: ['TG'],
         isPopular: false,
         imageLink: './img/Point_Blank.jpg',
         id: 5
@@ -99,12 +120,16 @@ const services = [
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
         popupTypes: ['Ваучер'],
-        region: ['Любой регион'],
+        region: [
+            {
+                title: 'Любой регион',
+                img: './img/turkey.webp',
+                voucherCurrency: 'Diamonds',
+                voucherNominals: ['56 Diamonds', '278 Diamonds', '571 Diamonds', '1167 Diamonds', '1783 Diamonds', '3005 Diamonds', '4770 Diamonds', '6012 Diamonds']
+            }
+        ],
         isVoucher: true,
         clientInfo: 'email',
-        voucherNominalsTRY: ['56', '278', '571', '1167', '1783', '3005', '4770', '6012'],
-        voucherCurrency: ['Diamonds'],
-        voucherCurrency: ['TG'],
         isPopular: false,
         imageLink: './img/Mobile_Legends.jpg',
         id: 15
@@ -115,11 +140,16 @@ const services = [
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         addInfo: 'Официальный партнер',
         popupTypes: ['Ваучер'],
-        region: ['Любой регион'],
+        region: [
+            {
+                title: 'Любой регион',
+                img: './img/turkey.webp',
+                voucherCurrency: 'Coins',
+                voucherNominals: ['1720 Coins']
+            }
+        ],
         isVoucher: true,
         clientInfo: 'email',
-        voucherNominalsANY: ['1720'],
-        voucherCurrency: ['Coins'],
         isPopular: false,
         imageLink: './img/Minecraft.jpg',
         id: 6
@@ -135,14 +165,16 @@ const services = [
         region: [ 
             {
                 title: 'США',
-                img: './img/usa.jpg'
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['5$', '10$', '20$', '50$']
             }, 
             {
                 title: 'Европа',
-                img: './img/europe.png'
+                img: './img/europe.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5€', '10€', '20€', '50€']
             }],
-        voucherNominalsUSD: ['5$', '10$', '20$', '50$'],
-        voucherNominalsEUR: ['5€', '10€', '20€', '50€'],
         isPopular: false,
         imageLink: './img/LeagueofLegends.jpg',
         id: 7
@@ -158,13 +190,16 @@ const services = [
         region: [ 
             {
                 title: 'США',
-                img: './img/usa.jpg'
+                img: './img/usa.jpg',
+                voucherCurrency: 'Pack',
+                voucherNominals: ['1 Pack']
             }, 
             {
                 title: 'Европа',
-                img: './img/europe.png'
+                img: './img/europe.png',
+                voucherCurrency: 'Pack',
+                voucherNominals: ['1 Pack']
             }],
-        voucherNominalsANY: ['1 Pack'],
         isPopular: false,
         imageLink: './img/Hearthstone.jpg',
         id: 8
@@ -177,110 +212,13 @@ const services = [
         popupTypes: ['Ваучер'],
         isVoucher: false,
         clientInfo: ['UID', 'Server'],
-        region: null,
-        voucherNominalsANY: [{
-            type: 'Кристаллы',
-            sum: '60 кристаллов',
-            priceRUR: 81,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '300 + 30 кристаллов',
-            priceRUR: 416,
-            comission: 0 
-        },
-        {
-            type: 'Кристаллы',
-            sum: '980 + 110 кристаллов',
-            priceRUR: 1252,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '1280 + 140 кристаллов',
-            priceRUR: 1669,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '1980 + 260 кристаллов',
-            priceRUR: 2715,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '3280 + 600 кристаллов',
-            priceRUR: 4179,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов',
-            priceRUR: 8360,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '9760 + 2200 кристаллов',
-            priceRUR: 12540,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 2',
-            priceRUR: 16720,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 3',
-            priceRUR: 25080,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 4',
-            priceRUR: 33440,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 5',
-            priceRUR: 41800,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 10',
-            priceRUR: 83601,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 15',
-            priceRUR: 125401,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 20',
-            priceRUR: 167201,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 25',
-            priceRUR: 209001,
-            comission: 0
-        },
-        {
-            type: 'Кристаллы',
-            sum: '6480 + 1600 кристаллов x 50',
-            priceRUR: 418003,
-            comission: 0
-        }
-    ],
+        region: [ 
+            {
+                title: 'Любой регион',
+                img: './img/usa.jpg',
+                voucherCurrency: 'Кристаллы',
+                voucherNominals: ['60 кристаллов', '300 + 30 кристаллов', '980 + 110 кристаллов', '1280 + 140 кристаллов', '1980 + 260 кристаллов', '3280 + 600 кристаллов', '6480 + 1600 кристаллов', '9760 + 2200 кристаллов', '6480 + 1600 кристаллов x 2', '6480 + 1600 кристаллов x 3', '6480 + 1600 кристаллов x 4', '6480 + 1600 кристаллов x 5', '6480 + 1600 кристаллов x 10', '6480 + 1600 кристаллов x 15', '6480 + 1600 кристаллов x 20', '6480 + 1600 кристаллов x 25', '6480 + 1600 кристаллов x 50']
+            }],
         isPopular: true,
         imageLink: './img/Genshin_impact.png',
         id: 9
@@ -293,9 +231,13 @@ const services = [
         popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
-        region: ['Любой регион'],
-        voucherNominalsUSD: ['5$', '10$', '20$', '50$'],
-        voucherNominalsEUR: ['5€', '10€', '20€', '50€'],
+        region: [ 
+            {
+                title: 'Любой регион',
+                img: './img/usa.jpg',
+                voucherCurrency: 'Diamonds',
+                voucherNominals: ['100 + 10 Diamomds', '210 + 21 Diamomds', '530 + 53 Diamomds', '1080 + 108 Diamomds', '2200 + 220 Diamomds']
+            }],
         isPopular: false,
         imageLink: './img/FreeFire.jpg',
         id: 10
@@ -308,9 +250,13 @@ const services = [
         popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
-        region: ['США'],
-        voucherNominalsUSD: ['5$', '10$', '20$', '50$'],
-        voucherNominalsEUR: ['5€', '10€', '20€', '50€'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'V-Bucks Card',
+                voucherNominals: ['2800 V-Bucks Card 25$', '5000 V-Bucks Card 40$']
+            }],
         isPopular: false,
         imageLink: './img/Fortnite.jpg',
         id: 11
@@ -323,9 +269,13 @@ const services = [
         popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
-        region: ['Турция'],
-        voucherNominalsUSD: ['5$', '10$', '20$', '50$'],
-        voucherNominalsEUR: ['5€', '10€', '20€', '50€'],
+        region: [ 
+            {
+                title: 'Турция',
+                img: './img/turkey.jpg',
+                voucherCurrency: 'Diamonds',
+                voucherNominals: ['100 + 10 Diamomds', '200 + 20 Diamomds', '500 + 50 Diamomds', '1000 + 100 Diamomds', '2000 + 200 Diamomds', '5000 + 500 Diamomds']
+            }],
         isPopular: false,
         imageLink: './img/BlackDesert.png',
         id: 12
@@ -338,9 +288,13 @@ const services = [
         popupTypes: ['Ваучер'],
         isVoucher: true,
         clientInfo: 'email',
-        region: ['Германия'],
-        voucherNominalsUSD: ['5$', '10$', '20$', '50$'],
-        voucherNominalsEUR: ['5€', '10€', '20€', '50€'],
+        region: [ 
+            {
+                title: 'Германия',
+                img: './img/germany.webp',
+                voucherCurrency: 'Syndicate Gold',
+                voucherNominals: ['1050 Syndicate Gold', '2150 Syndicate Gold', '2750 Syndicate Gold']
+            }],
         isPopular: false,
         imageLink: './img/ApexLegendsMobile.jpg',
         id: 13
@@ -358,18 +312,22 @@ const services = [
         region: [ 
             {
                 title: 'Россия',
-                img: './img/russia.webp'
+                img: './img/russia.webp',
+                voucherCurrency: 'RUB',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
             }, 
             {
                 title: 'Казахстан',
-                img: './img/kz.jpg'
+                img: './img/kz.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
             }, 
             {
                 title: 'Страны СНГ',
-                img: './img/cia.jpg'
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
             }],
-        voucherNominalsUSD: ['5$', '10$', '20$', '50$'],
-        voucherNominalsEUR: ['5€', '10€', '20€', '50€'],
         isPopular: true,
         imageLink: './img/steam.png',
         id: 14
@@ -387,57 +345,82 @@ const services = [
         region: [ 
             {
                 title: 'США',
-                img: './img/usa.jpg'
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['10$', '25$', '50$', '75$', '100$']
             }, 
             {
                 title: 'Индия',
-                img: './img/india.png'
+                img: './img/india.png',
+                voucherCurrency: 'INR',
+                voucherNominals: ['1000₹', '2000₹', '3000₹']
             }, 
             {
                 title: 'Польша',
-                img: './img/poland.png'
+                img: './img/poland.png',
+                voucherCurrency: 'PLN',
+                voucherNominals: ['50Zł', '100Z₹', '200Z₹']
             }, 
             {
                 title: 'Бельгия',
-                img: './img/belgium.webp'
+                img: './img/belgium.webp',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '20€', '50€']
             }, 
             {
                 title: 'Франция',
-                img: './img/france.webp'
+                img: './img/france.webp',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '20€', '25€', '30€', '40€', '50€', '75€', '100€']
             }, 
             {
                 title: 'Нидерланды',
-                img: './img/holland.png'
+                img: './img/holland.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['20€', '25€', '30€']
             }, 
             {
                 title: 'Австрия',
-                img: './img/austria.png'
+                img: './img/austria.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5€', '40€', '50€', '75€']
             }, 
             {
                 title: 'Германия',
-                img: './img/germany.webp'
+                img: './img/germany.webp',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5', '10€', '20€', '25€', '50€', '75€', '100€', '120€']
             }, 
             {
                 title: 'Великобритания',
-                img: './img/uk.jpg'
+                img: './img/uk.jpg',
+                voucherCurrency: 'GBP',
+                voucherNominals: ['10£', '20£', '25£', '40£', '45£', '50£', '90£', '100£']
             }, 
             {
                 title: 'Бразилия',
-                img: './img/brazil.png'
+                img: './img/brazil.png',
+                voucherCurrency: 'BRL',
+                voucherNominals: ['60R$', '10R$', '150R$', '250R$', '300R$', '400R$']
             }, 
             {
                 title: 'Ливан',
-                img: './img/livan.jpg'
+                img: './img/livan.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['5', '10$', '15$', '20$', '21$', '30$', '34$', '40$', '45$', '50$', '60$', '70$', '83$', '100$']
             }, 
             {
                 title: 'Арабские Эмираты',
-                img: './img/uae.png'
+                img: './img/uae.png',
+                voucherCurrency: 'USD',
+                voucherNominals: ['10$', '20$', '21$', '34$', '50$', '83$']
             }, 
             {
                 title: 'Финляндия',
-                img: './img/finland.jpg'
+                img: './img/finland.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['20€', '50€']
             }],
-        voucherNominalsUSD: ['10$', '25$', '50$', '75$', '100$'],
         isPopular: true,
         imageLink: './img/playstation.png',
         id: 16
@@ -455,14 +438,16 @@ const services = [
         region: [ 
             {
                 title: 'США',
-                img: './img/usa.jpg'
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['20$', '50$']
             }, 
             {
                 title: 'Европа',
-                img: './img/europe.png'
+                img: './img/europe.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['20€', '50€']
             }],
-        voucherNominalsUSD: ['20$', '50$'],
-        voucherNominalsEUR: ['20€', '50€'],
         isPopular: true,
         imageLink: './img/battlenet.png',
         id: 17
@@ -480,15 +465,17 @@ const services = [
         region: [ 
             {
                 title: 'США',
-                img: './img/usa.jpg'
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['10$', '15$']
             },
             {
                 title: 'Турция',
-                img: './img/turkey.webp'
+                img: './img/turkey.webp',
+                voucherCurrency: 'TRY',
+                voucherNominals: ['Turkey Ultimate 1 Month']
             }
         ],
-        voucherNominalsUSD: ['10$', '15$'],
-        voucherNominalsTRY: ['Turkey Ultimate 1 Month'],
         isPopular: true,
         imageLink: './img/xbox.png',
         id: 18
@@ -503,8 +490,14 @@ const services = [
         accountPopup: false,
         accountPopupInfo: '',
         clientInfo: 'email',
-        region: ['США'],
-        voucherNominalsUSD: ['25$', '50$', '100$'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['25$', '50$', '100$']
+            }
+        ],
         isPopular: false,
         imageLink: './img/Airbnb.jpg',
         id: 19
@@ -519,8 +512,14 @@ const services = [
         accountPopup: false,
         accountPopupInfo: '',
         clientInfo: 'email',
-        region: ['США'],
-        voucherNominalsUSD: ['5$', '10$', '15$', '50$', '100$'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['5$', '10$', '15$', '50$', '100$']
+            }
+        ],
         isPopular: false,
         imageLink: './img/Amazon.jpg',
         id: 20
@@ -538,30 +537,40 @@ const services = [
         region: [ 
             {
                 title: 'Россия',
-                img: './img/russia.webp'
+                img: './img/russia.webp',
+                voucherCurrency: 'RUR',
+                voucherNominals: ['500₽', '1000₽']
             }, 
             {
                 title: 'США',
-                img: './img/usa.jpg'
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['2$', '3$', '4$', '5$', '10$', '15$', '20$', '25$', '30$', '40$', '50$', '60$', '70$', '100$', '200$', '300$', '400$', '500$']
             }, 
             {
                 title: 'Турция',
-                img: './img/turkey.webp'
+                img: './img/turkey.webp',
+                voucherCurrency: 'TRY',
+                voucherNominals: ['25₺', '50₺', '100₺', '250₺', '500₺', '1000₺', '1500₺']
             }, 
             {
                 title: 'Бельгия',
-                img: './img/belgium.webp'
+                img: './img/belgium.webp',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5€', '10€', '15€', '25€', '50€', '100€']
             }, 
             {
                 title: 'Польша',
-                img: './img/poland.png'
+                img: './img/poland.png',
+                voucherCurrency: 'PLN',
+                voucherNominals: ['25Zł', '50Zł', '100Z₹', '200Z₹']
             },
             {
                 title: 'Арабские Эмираты',
-                img: './img/uae.png'
+                img: './img/uae.png',
+                voucherCurrency: 'AED',
+                voucherNominals: ['50د. إ.', '100د. إ.', '250د. إ.', '500د. إ.']
             }],
-        voucherNominalsRUR: ['500 ₽', '1000 ₽'],
-        voucherNominalsUSD: ['2$', '3$', '4$', '5$', '10$', '15$', '20$', '25$', '30$', '40$', '50$', '60$', '70$', '100$', '200$', '300$', '400$', '500$'],
         isPopular: false,
         imageLink: './img/App_Store.png',
         id: 21
@@ -573,6 +582,14 @@ const services = [
         imageLink: './img/ChatGPT.jpg',
         popupTypes: ['Ваучер'],
         isPopular: false,
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['Plus 1 месяц']
+            }
+        ],
         id: 22
     },
     {
@@ -582,6 +599,14 @@ const services = [
         imageLink: './img/ebay.jpg',
         popupTypes: ['Ваучер'],
         isPopular: false,
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['25$', '50$', '100$']
+            }
+        ],
         id: 23
     },
     {
@@ -592,31 +617,45 @@ const services = [
         region: [ 
             {
                 title: 'Турция',
-                img: './img/turkey.webp'
+                img: './img/turkey.webp',
+                voucherCurrency: 'TRY',
+                voucherNominals: ['250₺', '400₺', '500₺', '600₺', '750₺', '900₺']
             }, 
             {
                 title: 'Европа',
-                img: './img/europe.png'
+                img: './img/europe.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['15€', '25€', '50€']
             }, 
             {
                 title: 'Великобритания',
-                img: './img/uk.jpg'
+                img: './img/uk.jpg',
+                voucherCurrency: 'GBP',
+                voucherNominals: ['15£', '50£']
             }, 
             {
                 title: 'Саудовская Аравия',
-                img: './img/saudi.webp'
+                img: './img/saudi.webp',
+                voucherCurrency: 'SAR',
+                voucherNominals: ['100س', '250س', '500س', '1000س']
             }, 
             {
                 title: 'Польша',
-                img: './img/poland.png'
+                img: './img/poland.png',
+                voucherCurrency: 'PLN',
+                voucherNominals: ['60Zł', '80Zł', '120Z₹']
             }, 
             {
                 title: 'Арабские Эмираты',
-                img: './img/uae.png'
+                img: './img/uae.png',
+                voucherCurrency: 'AED',
+                voucherNominals: ['100د. إ.', '500د. إ.']
             }, 
             {
                 title: 'США',
-                img: './img/usa.jpg'
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['25$', '30$', '50$', '60$', '100$']
             }],
         popupTypes: ['Ваучер'],
         isPopular: true,
@@ -629,6 +668,26 @@ const services = [
         imageLink: './img/nintendo.jpg',
         popupTypes: ['Ваучер'],
         isPopular: true,
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['10$', '20$', '35$', '50$', '3 Months Membership', '12 Months Membership']
+            },
+            {
+                title: 'Европа',
+                img: './img/europe.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['15€', '25€']
+            },
+            {
+                title: 'Япония',
+                img: './img/japan.png',
+                voucherCurrency: 'JPY',
+                voucherNominals: ['500¥', '1000¥', '2000¥', '3000¥', '5000¥', '9000¥']
+            }
+        ],
         id: 25
     },
     {
@@ -637,6 +696,80 @@ const services = [
         subtitle: 'При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/spotify.jpg',
         popupTypes: ['Ваучер'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['10$', '30$', '60$']
+            },
+            {
+                title: 'Бельгия',
+                img: './img/belgium.webp',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '30€', '60€']
+            },
+            {
+                title: 'Франция',
+                img: './img/france.webp',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '30€', '60€']
+            },
+            {
+                title: 'Великобритания',
+                img: './img/uk.jpg',
+                voucherCurrency: 'GBP',
+                voucherNominals: ['10£', '30£', '60£']
+            },
+            {
+                title: 'Германия',
+                img: './img/germany.webp',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '30€', '60€']
+            },
+            {
+                title: 'Ирландия',
+                img: './img/ireland.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '30€', '60€']
+            },
+            {
+                title: 'Италия',
+                img: './img/italy.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '30€', '60€']
+            },
+            {
+                title: 'Нидерланды',
+                img: './img/holland.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '30€', '60€']
+            },
+            {
+                title: 'Испания',
+                img: './img/spain.png',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['10€', '30€', '60€']
+            },
+            {
+                title: 'Польша',
+                img: './img/poland.png',
+                voucherCurrency: 'PLN',
+                voucherNominals: ['1 месяц', '3 месяца', '6 месяцев']
+            },
+            {
+                title: 'Алжир',
+                img: './img/algeria.webp',
+                voucherCurrency: 'DZD',
+                voucherNominals: ['1 месяц', '3 месяца', '6 месяцев', '12 месяцев']
+            },
+            {
+                title: 'Саудовская Аравия',
+                img: './img/saudi.webp',
+                voucherCurrency: 'SAR',
+                voucherNominals: ['1 месяц', '3 месяца', '6 месяцев', '12 месяцев']
+            }
+        ],
         isPopular: false,
         id: 26
     },
@@ -655,6 +788,14 @@ const services = [
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/twitch.jpg',
         popupTypes: ['Ваучер'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['25$', '50$', '100$']
+            }
+        ],
         isPopular: false,
         id: 28
     },
@@ -664,6 +805,14 @@ const services = [
         subtitle: 'Для аккаунтов США. При регистрации нового аккаунта используйте почту с доменом gmail.com',
         imageLink: './img/adobeCreativeCloud.jpg',
         popupTypes: ['Ваучер'],
+        region: [ 
+            {
+                title: 'США',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['1 месяц']
+            }
+        ],
         isPopular: false,
         id: 29
     },
@@ -673,6 +822,14 @@ const services = [
         subtitle: 'Для аккаунтов любого региона. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         imageLink: './img/discord.jpg',
         popupTypes: ['Ваучер'],
+        region: [ 
+            {
+                title: 'Любой регион',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['Discord Nitro Classic Monthly', 'Discord Nitro Monthly', 'Discord Nitro Yearly']
+            }
+        ],
         isPopular: false,
         id: 30
     },
@@ -682,6 +839,14 @@ const services = [
         subtitle: 'Для аккаунтов РФ. При регистрации нового аккаунта использовать почту с доменом gmail.com',
         imageLink: './img/MSWindows.jpg',
         popupTypes: ['Ваучер'],
+        region: [ 
+            {
+                title: 'Россия',
+                img: './img/usa.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['1 устройство']
+            }
+        ],
         isPopular: false,
         id: 31
     }
