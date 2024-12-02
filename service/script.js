@@ -15,6 +15,10 @@ let paymentButton = document.querySelector('.popupType__item_payment');
 let voucherButton = document.querySelector('.popupType__item_voucher');
 let voucherNominalsContainer = document.querySelector('.choose-sum__items');
 let vouchers = document.querySelector('.choose-sum');
+let payButton = document.querySelector('.pay');
+let theEmailForm = document.forms.email;
+let paymentSum = document.querySelector('.pay-info__pay-type_sum');
+let finalSum = document.querySelector('.pay-info__pay-type_result');
 
 let regionTitle = document.querySelector('.region-select__title');
 
@@ -56,13 +60,12 @@ function getServiceParamentres(id) {
                 regionTitle.textContent = el.region[0].title;
             }
             
-            // если сервис Steam
-            if (el.title == 'Steam') {
-                console.log('yes')
-                popupTypesSteam.classList.remove('hidden');
-                steamPay.classList.remove('hidden');
-                vouchers.classList.add('hidden');
-            }
+        // если сервис Steam
+        if (el.title == 'Steam') {
+            popupTypesSteam.classList.remove('hidden');
+            steamPay.classList.remove('hidden');
+            vouchers.classList.add('hidden');
+        }
         } if (el.id == id && el.region && el.region.length > 1) {
             chooseRegion.classList.remove('hidden');
             let regionFlag = document.querySelector('.region-flag');
@@ -161,7 +164,7 @@ function loadVouchers(country) {
 // Выбор способа пополнения
 
 document.addEventListener('click', function(e) {
-
+    let dropDown = document.querySelector('.region-select__dropdown');
     if(e.target == paymentButton) {
         if(!paymentButton.classList.contains('popupType__item_active')) {
             paymentButton.classList.add('popupType__item_active');
@@ -174,8 +177,6 @@ document.addEventListener('click', function(e) {
     }
 
     if(e.target == voucherButton) {
-
-        loadVouchers(regionTitle.textContent);
 
         // активация/деактивация кнопок выбора способа оплаты - ваучер или оплата
 
@@ -190,6 +191,59 @@ document.addEventListener('click', function(e) {
         }
     }
 })
+
+// Выбор номинала ваучера
+
+document.addEventListener('click', function(e) {
+    let voucher = document.querySelectorAll('.choose-sum__item');
+    let currency = ''
+    if(e.target.classList.contains('choose-sum__item')) {
+        for (let i = 0; i < voucher.length; i++) {
+            if(voucher[i].classList.contains('choose-sum__item_active')) {
+                voucher[i].classList.remove('choose-sum__item_active')
+            }
+        }
+        e.target.classList.add('choose-sum__item_active');
+        let theSum = e.target.textContent;
+
+        if(theSum.slice(-1) == '$') {
+            currency = 'USD';
+        } else if(theSum.slice(-1) == '€') {
+            currency = 'EUR';
+        } else if(theSum.slice(-1) == '₺') {
+            currency = 'TRY';
+        } else if(theSum.slice(-1) == 'ł' || theSum.slice(-2)[0] == 'Z') {
+            currency = 'PLN';
+        } else if(theSum.slice(-1) == '.') {
+            currency = 'AED'
+        } else if(theSum.slice(-1) == '₽') {
+            currency = 'RUR'
+        } else if(theSum.slice(-1) == 'G') {
+            currency = 'TG'
+        } else if(theSum.slice(-2) == 'ds') {
+            currency = 'Diamonds' // проверить на других сервисах
+        } else if(theSum.slice(-2) == 'ns') {
+            currency = 'Coins'
+        } else if(theSum.slice(-2) == 'ck') {
+            currency = 'Pack'
+        } else if(theSum.slice(-2) == 'ов') {
+            currency = 'Кристаллы' // не работает
+        } else if(theSum.slice(-1) == '₹') {
+            currency = 'INR'
+        } else if(theSum.slice(-1) == '£') {
+            currency = 'GBP'
+        } else if(theSum.slice(-2) == 'R$') {
+            currency = 'BRL'
+        }
+        let theRate = rates.find((element) => element.currency == currency)
+        let paymentSumNumber = theSum.replace(/\D/g, "");
+        paymentSum.textContent = (paymentSumNumber * theRate.rate).toFixed(2) + ' ' + '₽';
+        finalSum.textContent = Number((paymentSumNumber * theRate.rate).toFixed(2)) + Number(theRate.comission);
+        let sumForButtonPay = Number((paymentSumNumber * theRate.rate).toFixed(2)) + Number(theRate.comission)
+        payButton.textContent = 'Оплатить' + ' ' + sumForButtonPay ;
+    };
+})
+
 
 // Поиск
 
@@ -249,8 +303,37 @@ function searchService(el) {
         searchResultDiv.textContent = '';
         searchResultDiv.classList.remove('visible');
     }
-
-
 }
 
+// Оплата
 
+payButton.addEventListener('click', function() {
+
+    let vouchers = document.querySelectorAll('.choose-sum__item');
+    let voucher = '';
+
+        for (let i = 0; i < vouchers.length; i++) {
+            if(vouchers[i].classList.contains('choose-sum__item_active')) {
+                voucher = vouchers[i].textContent;
+            }
+        } 
+
+    let paymentInfo = {
+        'serviceTitile': theService.title,
+        'region': regionTitle.textContent,
+        'voucherNominal': voucher,
+        'paymentSum': finalSum.textContent,
+        'clientEmail': theEmailForm.elements.steamEmail.value
+    }
+
+    console.log(paymentInfo);
+})
+
+// FAQ
+
+document.addEventListener('click', function (e) {
+    if(e.target.classList.contains('question-title') || e.target.classList.contains('faq__arrow')) {
+        e.target.parentNode.nextElementSibling.classList.toggle('visible');
+        e.target.parentNode.querySelector('.faq__arrow').classList.toggle('rotate');
+    }
+})

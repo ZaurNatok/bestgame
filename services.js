@@ -16,12 +16,14 @@ const services = [
                 title: 'Европа',
                 img: './img/europe.png',
                 voucherCurrency: 'EUR',
+                FXrate: 114.31,
                 voucherNominals: ['5€', '10€', '20€', '50€', '100€']
             }, 
             {
                 title: 'Турция',
                 img: './img/turkey.webp',
                 voucherCurrency: 'TRY',
+                FXrate: 3.11,
                 voucherNominals: ['150VP', '515VP', '1200VP', '1835VP', '2950VP', '6115VP']
             }],
         isVoucher: true,
@@ -328,6 +330,152 @@ const services = [
                 voucherCurrency: 'EUR',
                 voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
             }],
+        regionVoucher: [ 
+            {
+                title: 'США',
+                img: './img/russia.webp',
+                voucherCurrency: 'RUB',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Гонконг',
+                img: './img/kz.jpg',
+                voucherCurrency: 'USD',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Европа',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Перу',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Чили',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Мексика',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Вьетнам',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Колумбия',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'ЮАР',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Польша',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Великобритания',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Арабские Эмираты',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Филиппины',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Саудовская Аравия',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Индия',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Бразилия',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Индонезия',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Южная Корея',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Малайзия',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Сингапур',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Таиланд',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Тайвань',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Аргентина',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }, 
+            {
+                title: 'Турция',
+                img: './img/cia.jpg',
+                voucherCurrency: 'EUR',
+                voucherNominals: ['5$', '10$', '20$', '25$', '35$', '50$', '100$']
+            }
+        ],
         isPopular: true,
         imageLink: './img/steam.png',
         id: 14
@@ -407,7 +555,7 @@ const services = [
                 title: 'Ливан',
                 img: './img/livan.jpg',
                 voucherCurrency: 'USD',
-                voucherNominals: ['5', '10$', '15$', '20$', '21$', '30$', '34$', '40$', '45$', '50$', '60$', '70$', '83$', '100$']
+                voucherNominals: ['5$', '10$', '15$', '20$', '21$', '30$', '34$', '40$', '45$', '50$', '60$', '70$', '83$', '100$']
             }, 
             {
                 title: 'Арабские Эмираты',

@@ -95,9 +95,9 @@
 
         <div class="voucherEmail content-block content__parameters hidden">
             <h2 class="payment-parameters">Оформление покупки</h2>
-            <form action="" class="payment">
-                <label for="steam-email" class="form-label">Получить ваучер и инструкцию</label>
-                <input type="text" class="region-select__sector payment-input" id="steam-email" placeholder="Введите ваш email">
+            <form action="" class="payment" name="email">
+                <label for="steamEmail" class="form-label">Получить ваучер и инструкцию</label>
+                <input type="text" class="region-select__sector payment-input" id="steamEmail" placeholder="Введите ваш email">
             </form>
         </div>
 
@@ -156,7 +156,7 @@
                 </div>
                 <div class="pay-info__item">
                     <h3 class="pay-info__type">Сумма пополнения</h3>
-                    <p class="pay-info__pay-type">350₽</p>
+                    <p class="pay-info__pay-type pay-info__pay-type_sum">350₽</p>
                 </div>
                 <div class="pay-info__item">
                     <h3 class="pay-info__type">Комиссия сервиса</h3>
@@ -164,7 +164,7 @@
                 </div>
                 <div class="pay-info__item">
                     <h3 class="pay-info__type">Итого</h3>
-                    <p class="pay-info__pay-type">400₽</p>
+                    <p class="pay-info__pay-type pay-info__pay-type_result">400₽</p>
                 </div>
             </div>
 
@@ -173,6 +173,57 @@
 
     </div>
 
+</section>
+
+<section class="faq">
+    <div class="faq__left">
+        <h2 class="faq__title">Частые вопросы</h2>
+    </div>
+
+    <div class="faq__right">
+        <div class="faq__questions">
+            <div class="faq__item">
+                <div class="title-icon">
+                    <h3 class="question-title">Как отправить деньги</h3>
+                    <img src="../img/back.png" class="faq__arrow">
+                </div>
+                <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+            </div>
+
+            <div class="faq__item">
+                <div class="title-icon">
+                    <h3 class="question-title">Какая комиссия за перевод</h3>
+                    <img src="../img/back.png" class="faq__arrow">
+                </div>
+                <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+            </div>
+
+            <div class="faq__item">
+                <div class="title-icon">
+                    <h3 class="question-title">Как быстро дойдут деньги</h3>
+                    <img src="../img/back.png" class="faq__arrow">
+                </div>
+                <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+            </div>
+
+            <div class="faq__item">
+                <div class="title-icon">
+                    <h3 class="question-title">В какой валюте можно отправлять деньги?</h3>
+                    <img src="../img/back.png" class="faq__arrow">
+                </div>
+                <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+            </div>
+
+            <div class="faq__item">
+                <div class="title-icon">
+                    <h3 class="question-title">Какой курс будет при конвертации?</h3>
+                    <img src="../img/back.png" class="faq__arrow">
+                </div>
+                <p class="faq__answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>     
+            </div>
+
+        </div>
+    </div>
 </section>
 
 <!-- Footer -->
@@ -255,6 +306,7 @@ document.querySelector('.popular__arrow_previous').addEventListener('click', fun
 
 <script src="../services.js"></script>
 <script src="./script.js"></script>
+<script src="../rates.js"></script>
 
 
 
