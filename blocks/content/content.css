@@ -204,6 +204,7 @@
     border-radius: 15px;
     color: #fff;
     font-weight: 700;
+    width: 100%;
 }
 
 .choose-sum__items {
@@ -223,6 +224,11 @@
 }
 
 .choose-sum__item:hover {
+    color: #fff;
+}
+
+.choose-sum__item_active {
+    background-color: #009fdf;
     color: #fff;
 }
 
