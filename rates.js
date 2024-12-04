@@ -2,17 +2,17 @@ rates = [
     {
         currency: 'USD',
         rate: 107.74,
-        comission: 50
+        comission: 75
     },
     {
         currency: 'EUR',
         rate: 114.31,
-        comission: 50
+        comission: 75
     },
     {
         currency: 'TRY',
         rate: 3.11,
-        comission: 50
+        comission: 75
     },
     {
         currency: 'PLN',

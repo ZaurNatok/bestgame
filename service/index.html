@@ -71,6 +71,7 @@
             <form action="" class="payment">
                 <label for="steam-login" class="form-label">Где искать <span class="question">?</span></label>
                 <input type="text" class="region-select__sector payment-input" id="steam-login" placeholder="Введите логин Steam">
+                
                 <fieldset class="payment-sum">
                     <div class="">
                         <label for="sum" class="form-label">Сумма пополнения в рублях</label>
@@ -98,6 +99,7 @@
             <form action="" class="payment" name="email">
                 <label for="steamEmail" class="form-label">Получить ваучер и инструкцию</label>
                 <input type="text" class="region-select__sector payment-input" id="steamEmail" placeholder="Введите ваш email">
+                <p class="error hidden">Введите email</p>
             </form>
         </div>
 
@@ -147,7 +149,7 @@
             <h2 class="content-block__title">К оплате</h2>
             <div class="content-block__information">
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
-                <p class="information">Перед оплатой обязательно ознакомьтесь с разделом «Вопросы и ответы» ниже</p>
+                <p class="information">Перед оплатой обязательно ознакомьтесь с разделом «Частые вопросы» ниже</p>
             </div>
             <div class="pay-info">
                 <div class="pay-info__item">
@@ -156,19 +158,21 @@
                 </div>
                 <div class="pay-info__item">
                     <h3 class="pay-info__type">Сумма пополнения</h3>
-                    <p class="pay-info__pay-type pay-info__pay-type_sum">350₽</p>
+                    <p class="pay-info__pay-type pay-info__pay-type_sum"></p>
+                    
                 </div>
                 <div class="pay-info__item">
                     <h3 class="pay-info__type">Комиссия сервиса</h3>
-                    <p class="pay-info__pay-type">50₽</p>
+                    <p class="pay-info__pay-type comission"></p>
                 </div>
                 <div class="pay-info__item">
                     <h3 class="pay-info__type">Итого</h3>
-                    <p class="pay-info__pay-type pay-info__pay-type_result">400₽</p>
+                    <p class="pay-info__pay-type pay-info__pay-type_result"></p>
+                    <span class="loader hidden"></span>
                 </div>
             </div>
             <form action="bank100000000004://qr.nspk.ru/AS100001ORTF4GAF80KPJ53K186D9A3G?type=01&bank=100000000007&crc=0C8A">
-                <button class="pay">Оплатить 400₽</button>
+                <button class="pay">Оплатить</button>
              </form>
         </div>
 

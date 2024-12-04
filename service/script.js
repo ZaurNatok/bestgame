@@ -19,6 +19,9 @@ let payButton = document.querySelector('.pay');
 let theEmailForm = document.forms.email;
 let paymentSum = document.querySelector('.pay-info__pay-type_sum');
 let finalSum = document.querySelector('.pay-info__pay-type_result');
+let loader = document.querySelector('.loader');
+let comissionSum = document.querySelector('.comission');
+let errorText = document.querySelector('.error');
 
 let regionTitle = document.querySelector('.region-select__title');
 
@@ -198,12 +201,15 @@ document.addEventListener('click', function(e) {
     let voucher = document.querySelectorAll('.choose-sum__item');
     let currency = ''
     if(e.target.classList.contains('choose-sum__item')) {
+        finalSum.textContent = '';
+        loader.classList.remove('hidden');
         for (let i = 0; i < voucher.length; i++) {
             if(voucher[i].classList.contains('choose-sum__item_active')) {
                 voucher[i].classList.remove('choose-sum__item_active')
             }
         }
         e.target.classList.add('choose-sum__item_active');
+        
         let theSum = e.target.textContent;
 
         if(theSum.slice(-1) == '$') {
@@ -237,13 +243,22 @@ document.addEventListener('click', function(e) {
         }
         let theRate = rates.find((element) => element.currency == currency)
         let paymentSumNumber = theSum.replace(/\D/g, "");
-        paymentSum.textContent = (paymentSumNumber * theRate.rate).toFixed(2) + ' ' + '₽';
-        finalSum.textContent = Number((paymentSumNumber * theRate.rate).toFixed(2)) + Number(theRate.comission);
-        let sumForButtonPay = Number((paymentSumNumber * theRate.rate).toFixed(2)) + Number(theRate.comission)
-        payButton.textContent = 'Оплатить' + ' ' + sumForButtonPay ;
+        paymentSum.textContent = sumFormat((paymentSumNumber * theRate.rate)) + ' ' + '₽';
+
+        setTimeout(() => finalSum.textContent = sumFormat(Number((paymentSumNumber * theRate.rate).toFixed(2)) + Number(theRate.comission)) + ' ' + '₽', 1000);
+        setTimeout(() => loader.classList.add('hidden'), 999);
+
+        let sumForButtonPay = sumFormat(Number((paymentSumNumber * theRate.rate).toFixed(2)) + Number(theRate.comission)) + ' ' + '₽';
+        setTimeout(() => payButton.textContent = 'Оплатить' + ' ' + sumFormat(sumForButtonPay), 1000);
+        comissionSum.textContent = theRate.comission + ' ' + '₽';
     };
 })
 
+// Форматирование суммы к оплате
+
+function sumFormat(sum) {
+    return sum.toLocaleString();
+}
 
 // Поиск
 
@@ -316,7 +331,18 @@ payButton.addEventListener('click', function() {
             if(vouchers[i].classList.contains('choose-sum__item_active')) {
                 voucher = vouchers[i].textContent;
             }
+        }
+
+        if(checkInputs() == 'error') {
+            // payButton.setAttribute('disabled', true);
+            return;
         } 
+        
+        else if(checkInputs() == 'ok') {
+            payButton.removeAttribute('disabled');
+        }
+
+
 
     let paymentInfo = {
         'serviceTitile': theService.title,
@@ -327,6 +353,7 @@ payButton.addEventListener('click', function() {
     }
 
     console.log(paymentInfo);
+    
 })
 
 // FAQ
@@ -337,3 +364,17 @@ document.addEventListener('click', function (e) {
         e.target.parentNode.querySelector('.faq__arrow').classList.toggle('rotate');
     }
 })
+
+// валидация полей
+
+function checkInputs() {
+    if(theEmailForm.elements.steamEmail.value == '') {
+        errorText.classList.remove('hidden');
+        errorText.textContent = 'Это обязательное поле';
+        return 'error';
+    } else if(!theEmailForm.elements.steamEmail.value == '') {
+        errorText.classList.add('hidden');
+        theEmailForm.setAttribute('action', 'bank100000000004://qr.nspk.ru/AS100001ORTF4GAF80KPJ53K186D9A3G?type=01&bank=100000000007&crc=0C8A')
+        return 'ok';
+    }
+}
