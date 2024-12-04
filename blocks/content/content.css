@@ -120,6 +120,11 @@
     margin: 0;
 }
 
+.error {
+    font-size: 10px;
+    color: red;
+}
+
 .region-flag {
     width: 32px;
     height: 32px;
@@ -181,6 +186,7 @@
     justify-content: space-between;
     margin: 10px 0;
     align-items: center;
+    height: 50px;
 }
 
 .payment-parameters, .choose-typePopup {
@@ -205,6 +211,15 @@
     color: #fff;
     font-weight: 700;
     width: 100%;
+}
+
+.loader {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    border: solid 2px;
+    border-color: #444 #444 #444 #009fdf;
+    animation: spin .75s linear infinite;
 }
 
 .choose-sum__items {
@@ -264,5 +279,11 @@
     .payment-sum {
         flex-direction: column;
         display: flex;
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(1turn);
     }
 }
