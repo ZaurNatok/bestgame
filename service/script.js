@@ -42,20 +42,18 @@ loadVouchers(regionTitle.textContent);
 // данные названия сервиса, субтайтл + картинка по id сервиса
 
 function getService(id) {
-    services.forEach(el => {
-        if (el.id == id) {
-            id = el.id;
-            serviceTitle.textContent = el.title;
-            serviceImage.setAttribute('src', '.' + `${el.imageLink}`)
-            serviceSubtitle.textContent = el.subtitle;
-            getServiceParamentres(id);
-        }
-    })
+    serviceTitle.textContent = theService.title;
+    serviceImage.setAttribute('src', '.' + `${theService.imageLink}`)
+    serviceSubtitle.textContent = theService.subtitle;
+    getServiceParamentres(id);
 }
 
 // параметры сервиса
 
 function getServiceParamentres(id) {
+
+
+
     services.forEach(el => {
         if (el.id == id) {
             if(el.popupTypes.length < 2) {
@@ -167,7 +165,6 @@ function loadVouchers(country) {
 // Выбор способа пополнения
 
 document.addEventListener('click', function(e) {
-    let dropDown = document.querySelector('.region-select__dropdown');
     if(e.target == paymentButton) {
         if(!paymentButton.classList.contains('popupType__item_active')) {
             paymentButton.classList.add('popupType__item_active');
@@ -322,7 +319,9 @@ function searchService(el) {
 
 // Оплата
 
-payButton.addEventListener('click', function() {
+payButton.addEventListener('click', function(e) {
+
+    e.preventDefault();
 
     let vouchers = document.querySelectorAll('.choose-sum__item');
     let voucher = '';
@@ -333,27 +332,23 @@ payButton.addEventListener('click', function() {
             }
         }
 
-        if(checkInputs() == 'error') {
-            // payButton.setAttribute('disabled', true);
+        let result = '';
+
+        if(checkInputs(result) == 'error') {
             return;
-        } 
-        
-        else if(checkInputs() == 'ok') {
+        } else {
+
             payButton.removeAttribute('disabled');
+
+            let paymentInfo = {
+                'serviceTitile': theService.title,
+                'region': regionTitle.textContent,
+                'voucherNominal': voucher,
+                'paymentSum': finalSum.textContent,
+                'clientEmail': theEmailForm.elements.steamEmail.value
+            }
+            console.log(paymentInfo);
         }
-
-
-
-    let paymentInfo = {
-        'serviceTitile': theService.title,
-        'region': regionTitle.textContent,
-        'voucherNominal': voucher,
-        'paymentSum': finalSum.textContent,
-        'clientEmail': theEmailForm.elements.steamEmail.value
-    }
-
-    console.log(paymentInfo);
-    
 })
 
 // FAQ
@@ -367,14 +362,26 @@ document.addEventListener('click', function (e) {
 
 // валидация полей
 
-function checkInputs() {
+function checkInputs(result) {
     if(theEmailForm.elements.steamEmail.value == '') {
         errorText.classList.remove('hidden');
         errorText.textContent = 'Это обязательное поле';
-        return 'error';
+        result = 'error';
+        theEmailForm.elements.steamEmail.classList.add('err');
+        return result;
     } else if(!theEmailForm.elements.steamEmail.value == '') {
-        errorText.classList.add('hidden');
-        theEmailForm.setAttribute('action', 'bank100000000004://qr.nspk.ru/AS100001ORTF4GAF80KPJ53K186D9A3G?type=01&bank=100000000007&crc=0C8A')
-        return 'ok';
+        var regex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+        if(regex.test(theEmailForm.elements.steamEmail.value) == false) {
+            errorText.classList.remove('hidden');
+            errorText.textContent = 'Проверьте введенный email';
+            result = 'error';
+            theEmailForm.elements.steamEmail.classList.add('err');
+            return result;
+        } else {
+            errorText.classList.add('hidden');
+            result = 'ok';
+            theEmailForm.elements.steamEmail.classList.remove('err');
+            return result;
+        }
     }
 }
