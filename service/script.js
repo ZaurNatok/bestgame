@@ -22,6 +22,10 @@ let finalSum = document.querySelector('.pay-info__pay-type_result');
 let loader = document.querySelector('.loader');
 let comissionSum = document.querySelector('.comission');
 let errorText = document.querySelector('.error');
+let popup = document.querySelector('.popup');
+let popupServiceName = document.querySelector('.service-name');
+let popupClientEmail = document.querySelector('.client-email');
+let popupPaymentSum = document.querySelector('.paymentsum');
 
 let regionTitle = document.querySelector('.region-select__title');
 
@@ -347,6 +351,17 @@ payButton.addEventListener('click', function(e) {
                 'paymentSum': finalSum.textContent,
                 'clientEmail': theEmailForm.elements.steamEmail.value
             }
+
+            popup.classList.remove('hidden');
+            popupServiceName.textContent = theService.title;
+            popupClientEmail.textContent = theEmailForm.elements.steamEmail.value;
+            popupPaymentSum = paymentInfo.paymentSum;
+
+            popup.addEventListener('click', (e) => {
+                if(e.target.classList.contains('close') || e.target.classList.contains('popup__wrapper')) {
+                    popup.classList.add('hidden');
+                }
+            })
             console.log(paymentInfo);
         }
 })
