@@ -68,5 +68,10 @@ rates = [
         currency: 'BRL',
         rate: 18,
         comission: 50
+    },
+    {
+        currency: 'SAR',
+        rate: 27.52,
+        comission: 50
     }
 ]

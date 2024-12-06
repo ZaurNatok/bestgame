@@ -56,8 +56,6 @@ function getService(id) {
 
 function getServiceParamentres(id) {
 
-
-
     services.forEach(el => {
         if (el.id == id) {
             if(el.popupTypes.length < 2) {
@@ -70,8 +68,10 @@ function getServiceParamentres(id) {
             popupTypesSteam.classList.remove('hidden');
             steamPay.classList.remove('hidden');
             vouchers.classList.add('hidden');
+            popupTypes.classList.remove('hidden');
         }
         } if (el.id == id && el.region && el.region.length > 1) {
+            popupTypes.classList.remove('hidden');
             chooseRegion.classList.remove('hidden');
             let regionFlag = document.querySelector('.region-flag');
             regionFlag.setAttribute('src', `.${el.region[0].img}`);
@@ -138,7 +138,6 @@ function chosenRegion(name, flag) {
 // показываем номиналы ваучеров в зависимости от страны
 
 function loadVouchers(country) {
-
     if(theService.popupTypes.length < 2) {
         // let regionTitle = document.querySelector('.region-select__title');
         let theCountryVouchers = theService.region.find((element) => element.title == country);
@@ -164,6 +163,10 @@ function loadVouchers(country) {
             voucherNominal.textContent = el;
         })
     }
+
+    if(theService.title == 'Steam') {
+        vouchers.classList.add('hidden');
+    }
 }
 
 // Выбор способа пополнения
@@ -173,6 +176,7 @@ document.addEventListener('click', function(e) {
         if(!paymentButton.classList.contains('popupType__item_active')) {
             paymentButton.classList.add('popupType__item_active');
             voucherButton.classList.remove('popupType__item_active');
+            vouchers.classList.add('hidden');
         } if(steamPay.classList.contains('hidden')) {
             steamPay.classList.remove('hidden');
             voucherPay.classList.add('hidden');
@@ -241,6 +245,8 @@ document.addEventListener('click', function(e) {
             currency = 'GBP'
         } else if(theSum.slice(-2) == 'R$') {
             currency = 'BRL'
+        } else if(theSum.slice(-1) == 'س') {
+            currency = 'SAR';
         }
         let theRate = rates.find((element) => element.currency == currency)
         let paymentSumNumber = theSum.replace(/\D/g, "");
@@ -355,7 +361,7 @@ payButton.addEventListener('click', function(e) {
             popup.classList.remove('hidden');
             popupServiceName.textContent = theService.title;
             popupClientEmail.textContent = theEmailForm.elements.steamEmail.value;
-            popupPaymentSum = paymentInfo.paymentSum;
+            popupPaymentSum.textContent = paymentInfo.paymentSum;
 
             popup.addEventListener('click', (e) => {
                 if(e.target.classList.contains('close') || e.target.classList.contains('popup__wrapper')) {

@@ -22,7 +22,7 @@
             <h1>Оплачено!</h1>
             <p class="popup__title">Вы оплачиваете <span class="service-name"></span></p>
             <p class="popup__email">Ваучер направлен на почту <span class="client-email"></span></p>
-            <!-- <p class="popup__sum">Сумма оплаты <span class="paymentsum"></span></p> -->
+            <p class="popup__sum">Сумма оплаты <span class="paymentsum"></span></p>
             <i class="fa fa-times close" aria-hidden="true"></i>
         </div>
     </div>
@@ -30,16 +30,18 @@
 <!-- header -->
 
     <section class="topline">
-        <a href="../index.html"><img src="../img/vtb.png" alt="logo" class="logo logo_topline"></a>
-        <ul class="topline__menu">
-            <li class="menu-item"><a href="../index.html" class="link">Главная</a></li>
-            <li class="menu-item"><a href="#" class="link">Все сервисы</a></li>
-            <li class="menu-item"><a href="#" class="link">Вопрос / ответ</a></li>
-        </ul>
-        <div class="topline__search-area">
-            <input type="text" class="topline__search" placeholder="Поиск">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <div class="topline__searchResult"></div>
+        <div class="topline__wrapper">
+            <a href="../index.html"><img src="../img/vtb.png" alt="logo" class="logo logo_topline"></a>
+            <!-- <ul class="topline__menu">
+                <li class="menu-item"><a href="../index.html" class="link">Главная</a></li>
+                <li class="menu-item"><a href="#" class="link">Все сервисы</a></li>
+                <li class="menu-item"><a href="#" class="link">Вопрос / ответ</a></li>
+            </ul> -->
+            <div class="topline__search-area">
+                <input type="text" class="topline__search" placeholder="Поиск">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <div class="topline__searchResult"></div>
+            </div>
         </div>
     </section>
 
@@ -56,7 +58,7 @@
             </div>
         </div>
 
-        <div class="content-block content__parameters choose-typePopup">
+        <div class="content-block content__parameters choose-typePopup hidden">
             <div class="choose-typePopup choose-typePopup_steam hidden">
                 <h2 class="choose-typePopup">Выберите способ пополнения</h2>
                 <div class="choose-typePopup__types">
@@ -109,7 +111,7 @@
             <h2 class="payment-parameters">Оформление покупки</h2>
             <form action="" class="payment" name="email">
                 <label for="steamEmail" class="form-label">Получить ваучер и инструкцию</label>
-                <input type="text" class="region-select__sector payment-input" id="steamEmail" placeholder="Введите ваш email">
+                <input type="email" class="region-select__sector payment-input" id="steamEmail" placeholder="Введите ваш email">
                 <p class="error hidden">Введите email</p>
             </form>
         </div>
