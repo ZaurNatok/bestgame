@@ -123,6 +123,7 @@
 .error {
     font-size: 10px;
     color: red;
+    margin-bottom: 0;
 }
 
 .region-flag {
@@ -165,6 +166,8 @@
 .content-block_pay {
     flex-direction: column;
     color: #ADB0CC;
+    position: sticky;
+    top: 10px;
 }
 
 .content-block__information {
@@ -281,6 +284,10 @@
     margin: 0;
     line-height: 24px;
     color: #888baa;
+}
+
+.service-name, .client-email, .paymentsum {
+    font-weight: 700;
 }
 
 .close {
